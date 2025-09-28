@@ -13,3 +13,5 @@ const Main = () => {
 };
 
 export default Main;
+
+// bg-white dark:bg-gray-900

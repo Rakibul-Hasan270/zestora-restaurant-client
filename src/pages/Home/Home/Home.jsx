@@ -1,3 +1,4 @@
+import AboutUs from "../AboutUs/AboutUs";
 import Carousel from "../Banner/Carousel";
 import CallToAction from "../CallToAction/CallToAction";
 import Featured from "../Featured/Featured";
@@ -14,6 +15,7 @@ const Home = () => {
             <Featured></Featured>
             <div className="max-w-8xl mx-auto">
                 <CallToAction></CallToAction>
+                <AboutUs></AboutUs>
             </div>
         </div>
     );

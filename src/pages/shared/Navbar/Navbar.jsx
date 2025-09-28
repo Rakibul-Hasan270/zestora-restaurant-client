@@ -1,18 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from '../../../../public/logo.png'
+import logo from '../../../assets/logo.png';
 
 const Navbar = () => {
 
-
     const links = <div className='md:flex justify-end items-center'>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Home</NavLink></li>
-
         <li><NavLink to="/menu" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Menu</NavLink></li>
-
         <li><NavLink to="/reservation" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Reservation</NavLink></li>
-
         <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Contact</NavLink></li>
-
         <li><NavLink to="/signIn" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Sign In</NavLink></li>
     </div>
 

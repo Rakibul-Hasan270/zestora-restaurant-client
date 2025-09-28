@@ -4,7 +4,7 @@ import SectionHeading from '../../../components/SectionHeading/SectionHeading';
 
 const Featured = () => {
     return (
-        <div>
+        <div className='md:mt-32'>
             <SectionHeading heading='Why Choose Us' subHeading='Everything you need to get started quickly and also fresh Food.'></SectionHeading>
             <section
                 style={{ backgroundImage: `linear-gradient(to right, #151515, rgba(21, 21, 21, 0)), url('${fetared}')` }}

@@ -4,11 +4,11 @@ import SectionHeading from '../../../components/SectionHeading/SectionHeading';
 
 const Featured = () => {
     return (
-        <div>
-            <SectionHeading heading='Why Choose Us' subHeading='Everything you need to get started quickly and fresh item'></SectionHeading>
+        <div className='mb-52'>
+            <SectionHeading heading='Why Choose Us' subHeading='Everything you need to get started quickly and also fresh Food.'></SectionHeading>
             <section
-                style={{ backgroundImage: `url(${fetared})` }}
-                className="bg-cover bg-center md:h-[500px] w-full"
+                style={{ backgroundImage: `linear-gradient(to right, #151515, rgba(21, 21, 21, 0)), url('${fetared}')` }}
+                className="bg-cover bg-center md:h-[600px] w-full"
             >
                 <div className="container px-6 py-10 mx-auto">
 
@@ -33,31 +33,12 @@ const Featured = () => {
                             </span>
 
                             <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">
-                                Copy & paste components
+                                Authentic Taste of Tradition
                             </h1>
 
                             <p className="text-gray-500 dark:text-gray-300">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+                                We bring the flavors of tradition to a modern setting. Every dish carries the nostalgic taste of home-cooked meals with a touch of local heritage.
                             </p>
-
-                            <a
-                                href="#"
-                                className="flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-blue-600 dark:hover:text-blue-500"
-                            >
-                                <span className="mx-1">read more</span>
-                                <svg
-                                    className="w-4 h-4 mx-1 rtl:-scale-x-100"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </a>
                         </div>
 
                         <div className="flex flex-col items-center p-6 space-y-3 text-center bg-gray-100 rounded-xl dark:bg-gray-800">
@@ -79,31 +60,12 @@ const Featured = () => {
                             </span>
 
                             <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">
-                                Zero Configuration
+                                Fresh & Locally Sourced Ingredients
                             </h1>
 
                             <p className="text-gray-500 dark:text-gray-300">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+                                All our ingredients are sourced fresh from local markets every day, ensuring healthy, flavorful meals served straight from farm to table.
                             </p>
-
-                            <a
-                                href="#"
-                                className="flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-blue-600 dark:hover:text-blue-500"
-                            >
-                                <span className="mx-1">read more</span>
-                                <svg
-                                    className="w-4 h-4 mx-1 rtl:-scale-x-100"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </a>
                         </div>
 
                         <div className="flex flex-col items-center p-6 space-y-3 text-center bg-gray-100 rounded-xl dark:bg-gray-800">
@@ -125,31 +87,12 @@ const Featured = () => {
                             </span>
 
                             <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">
-                                Simple & clean designs
+                                Cozy Ambiance & Exceptional Service
                             </h1>
 
                             <p className="text-gray-500 dark:text-gray-300">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+                                From warm lighting to comfortable seating and friendly staff — every detail is designed to make your dining experience relaxing and memorable.
                             </p>
-
-                            <a
-                                href="#"
-                                className="flex items-center -mx-1 text-sm text-blue-500 capitalize transition-colors duration-300 transform dark:text-blue-400 hover:underline hover:text-blue-600 dark:hover:text-blue-500"
-                            >
-                                <span className="mx-1">read more</span>
-                                <svg
-                                    className="w-4 h-4 mx-1 rtl:-scale-x-100"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </a>
                         </div>
                     </div>
                 </div>

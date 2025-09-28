@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
+import { Link } from "react-router-dom";
 
 const PopularMenu = () => {
     const [menu, setMenu] = useState([]);
@@ -20,7 +21,7 @@ const PopularMenu = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {
                     menu.map((menu, idx) =>
-                        <div key={idx} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        <Link to='/menu' key={idx} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <img
                                 className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
                                 src={menu.image}
@@ -34,7 +35,7 @@ const PopularMenu = () => {
                                     {menu.description}
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     )
                 }
             </div>

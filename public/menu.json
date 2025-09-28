@@ -1,0 +1,202 @@
+[
+    {
+        "name": "Classic Beef Burger",
+        "category": "Burgers",
+        "image": "https://i.postimg.cc/ZK6S7h7H/burger.jpg",
+        "description": "Juicy grilled beef patty with fresh lettuce, tomato, and cheese.",
+        "price": 8.99,
+        "rating": 4.7
+    },
+    {
+        "name": "Margherita Pizza",
+        "category": "Pizza",
+        "image": "https://i.postimg.cc/BvRkXgKw/pizza.jpg",
+        "description": "Traditional Italian pizza with mozzarella, tomato, and fresh basil.",
+        "price": 10.99,
+        "rating": 4.8
+    },
+    {
+        "name": "Chicken Biryani",
+        "category": "Rice",
+        "image": "https://i.postimg.cc/dVgTwRjv/biryani.jpg",
+        "description": "Fragrant basmati rice cooked with tender chicken and aromatic spices.",
+        "price": 12.5,
+        "rating": 4.9
+    },
+    {
+        "name": "Spaghetti Carbonara",
+        "category": "Pasta",
+        "image": "https://i.postimg.cc/1z9tbcMQ/pasta.jpg",
+        "description": "Creamy pasta with parmesan, eggs, and crispy bacon.",
+        "price": 11.2,
+        "rating": 4.6
+    },
+    {
+        "name": "Grilled Salmon",
+        "category": "Seafood",
+        "image": "https://i.postimg.cc/BQyK2YNR/salmon.jpg",
+        "description": "Fresh Atlantic salmon grilled to perfection with lemon butter sauce.",
+        "price": 15.99,
+        "rating": 4.8
+    },
+    {
+        "name": "Chicken Caesar Salad",
+        "category": "Salads",
+        "image": "https://i.postimg.cc/dt8R6qZr/salad.jpg",
+        "description": "Crisp romaine lettuce, grilled chicken, parmesan, and Caesar dressing.",
+        "price": 7.5,
+        "rating": 4.5
+    },
+    {
+        "name": "BBQ Chicken Wings",
+        "category": "Starters",
+        "image": "https://i.postimg.cc/gcD8kbt0/wings.jpg",
+        "description": "Tender chicken wings tossed in smoky BBQ sauce.",
+        "price": 6.99,
+        "rating": 4.7
+    },
+    {
+        "name": "Vegetable Fried Rice",
+        "category": "Rice",
+        "image": "https://i.postimg.cc/3RYqfw6g/friedrice.jpg",
+        "description": "Stir-fried rice with fresh seasonal vegetables and soy sauce.",
+        "price": 8.5,
+        "rating": 4.4
+    },
+    {
+        "name": "Pepperoni Pizza",
+        "category": "Pizza",
+        "image": "https://i.postimg.cc/KYWsn1d0/pepperoni.jpg",
+        "description": "Cheesy pizza topped with spicy pepperoni slices.",
+        "price": 11.5,
+        "rating": 4.9
+    },
+    {
+        "name": "Tandoori Chicken",
+        "category": "Indian",
+        "image": "https://i.postimg.cc/fbPgNNB8/tandoori.jpg",
+        "description": "Spicy marinated chicken roasted in a traditional tandoor oven.",
+        "price": 13.25,
+        "rating": 4.8
+    },
+    {
+        "name": "Cheese Omelette",
+        "category": "Breakfast",
+        "image": "https://i.postimg.cc/7Z3GRYk7/omelette.jpg",
+        "description": "Fluffy eggs with melted cheese, served with toast.",
+        "price": 5.99,
+        "rating": 4.3
+    },
+    {
+        "name": "Fish & Chips",
+        "category": "Seafood",
+        "image": "https://i.postimg.cc/d3wmr0Xq/fishchips.jpg",
+        "description": "Golden fried fish fillet with crispy fries and tartar sauce.",
+        "price": 9.99,
+        "rating": 4.6
+    },
+    {
+        "name": "Beef Steak",
+        "category": "Steak",
+        "image": "https://i.postimg.cc/4xYn1cRf/steak.jpg",
+        "description": "Tender grilled beef steak served with mashed potatoes.",
+        "price": 18.75,
+        "rating": 4.9
+    },
+    {
+        "name": "Chocolate Lava Cake",
+        "category": "Desserts",
+        "image": "https://i.postimg.cc/zGhmFn5m/lavacake.jpg",
+        "description": "Warm chocolate cake with a gooey molten center.",
+        "price": 6.5,
+        "rating": 4.8
+    },
+    {
+        "name": "Strawberry Milkshake",
+        "category": "Drinks",
+        "image": "https://i.postimg.cc/cCQmRL7V/milkshake.jpg",
+        "description": "Refreshing strawberry shake topped with whipped cream.",
+        "price": 4.99,
+        "rating": 4.5
+    },
+    {
+        "name": "Sushi Platter Deluxe",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/Hk2tqD0L/sushi.jpg",
+        "description": "A colorful assortment of fresh sushi rolls with salmon, tuna, and avocado.",
+        "price": 22.99,
+        "rating": 4.9
+    },
+    {
+        "name": "Cheesy Nachos Supreme",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/7hQ3j6px/nachos.jpg",
+        "description": "Crispy nachos loaded with melted cheese, jalapenos, and salsa.",
+        "price": 9.49,
+        "rating": 4.6
+    },
+    {
+        "name": "Ramen Bowl Special",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/3rxmQp4B/ramen.jpg",
+        "description": "Japanese-style ramen noodles with soft-boiled egg, pork, and miso broth.",
+        "price": 13.75,
+        "rating": 4.8
+    },
+    {
+        "name": "Shawarma Wrap",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/Bbn4tMj1/shawarma.jpg",
+        "description": "Tender chicken wrapped in pita bread with garlic sauce and fresh veggies.",
+        "price": 7.99,
+        "rating": 4.7
+    },
+    {
+        "name": "Falafel Platter",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/v8pgKZzr/falafel.jpg",
+        "description": "Crispy falafel served with hummus, pita bread, and salad.",
+        "price": 10.25,
+        "rating": 4.5
+    },
+    {
+        "name": "Loaded Fries",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/28PmWBpF/fries.jpg",
+        "description": "Golden fries topped with cheese, crispy bacon, and ranch dressing.",
+        "price": 8.99,
+        "rating": 4.6
+    },
+    {
+        "name": "Thai Green Curry",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/MZyfq7VZ/thaicurry.jpg",
+        "description": "Spicy Thai curry with coconut milk, chicken, and green chili paste.",
+        "price": 14.99,
+        "rating": 4.7
+    },
+    {
+        "name": "Dim Sum Basket",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/65YqMhzR/dimsum.jpg",
+        "description": "Assorted steamed dumplings filled with shrimp, pork, and vegetables.",
+        "price": 12.99,
+        "rating": 4.8
+    },
+    {
+        "name": "Mediterranean Platter",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/kXp4t7pP/mediterranean.jpg",
+        "description": "A mix of hummus, tabbouleh, olives, pita, and grilled meat skewers.",
+        "price": 16.50,
+        "rating": 4.9
+    },
+    {
+        "name": "Taco Trio",
+        "category": "PopularMenu",
+        "image": "https://i.postimg.cc/L6zyPBMw/tacos.jpg",
+        "description": "Three Mexican-style tacos filled with beef, chicken, and veggies.",
+        "price": 9.99,
+        "rating": 4.7
+    }
+]

@@ -9,32 +9,36 @@ import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
 
 
 const Menu = () => {
-    const [, isLoading] = useMenu();
+    const [menuUs, isLoading] = useMenu();
     const axiosPublic = useAxiosPublic();
+    const { reset } = useForm();
 
     const [count, setCount] = useState(0);
     const [itemPerPage,] = useState(6);
     const [currentPage, setCurrentPage] = useState(1);
     const [filter, setFilter] = useState('');
     const [sort, setSort] = useState('');
+    const [search, setSearch] = useState('');
+    const [searchText, setSearchText] = useState('');
 
     const numberOfPages = Math.ceil(count / itemPerPage);
     const pages = [...Array(numberOfPages).keys()].map(e => e + 1);
 
     useEffect(() => {
-        axiosPublic.get(`/menuCount?filter=${filter}`)
+        axiosPublic.get(`/menuCount?filter=${filter}&search=${search}`)
             .then(data => {
                 setCount(data.data.result);
             })
-    }, [axiosPublic, filter])
+    }, [axiosPublic, filter, search])
 
     const { data: menu = [] } = useQuery({
-        queryKey: ['count', currentPage, itemPerPage, filter, sort],
+        queryKey: ['count', currentPage, itemPerPage, filter, sort, search],
         queryFn: async () => {
-            const result = await axiosPublic.get(`/all-menu?page=${currentPage}&size=${itemPerPage}&filter=${filter}&sort=${sort}`);
+            const result = await axiosPublic.get(`/all-menu?page=${currentPage}&size=${itemPerPage}&filter=${filter}&sort=${sort}&search=${search}`);
             return result.data;
         }
     })
@@ -42,9 +46,16 @@ const Menu = () => {
     const handelPaginationBnt = value => {
         setCurrentPage(value);
     }
-    const handelResetBtn = () => {
+    const handelReset = () => {
         setFilter('');
         setSort('');
+        setSearch('');
+        setSearchText('');
+    }
+    const handelSearch = event => {
+        event.preventDefault();
+        setSearch(searchText);
+        reset();
     }
 
     if (isLoading) return <p className="text-center text-2xl font-serif text-cyan-500 mt-16 mb-10">Loading...</p>
@@ -66,7 +77,7 @@ const Menu = () => {
                 <div className="md:w-5/6 mx-auto my-12 flex gap-7 mb-28">
                     <Marquee>
                         {
-                            menu.map(menu => <button key={menu._id} className="border rounded-2xl py-2 px-6 font-semibold cursor-pointer border-cyan-500 mr-8">{menu.category}</button>)
+                            menuUs.map(menu => <button key={menu._id} className="border rounded-2xl py-2 px-6 font-semibold cursor-pointer border-cyan-500 mr-8">{menu.category}</button>)
                         }
                     </Marquee>
                 </div>
@@ -90,7 +101,7 @@ const Menu = () => {
                     </select>
                 </div>
 
-                <form className="mx-auto md:w-1/2">
+                <form onSubmit={handelSearch} className="mx-auto md:w-1/2">
                     <label
                         htmlFor="default-search"
                         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -116,11 +127,13 @@ const Menu = () => {
                             </svg>
                         </div>
                         <input
+                            onChange={e => setSearchText(e.target.value)}
+                            value={searchText}
+                            name="search"
                             type="search"
                             id="default-search"
                             className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="Search Mockups, Logos..."
-                            required
+                            placeholder="Search Mockups, Logos..." required
                         />
                         <button
                             type="submit"
@@ -146,7 +159,7 @@ const Menu = () => {
                 </div>
             </div>
             <div className="flex justify-center mb-12">
-                <button onClick={handelResetBtn} className="cursor-pointer text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800 mt-2.5">Reset Page</button>
+                <button onClick={handelReset} className="cursor-pointer text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800 mt-2.5">Reset Page</button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">

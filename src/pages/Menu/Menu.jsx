@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 import useMenu from "../../hooks/useMenu";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import MenuCard from "../../components/MenuCard/MenuCard";
-import { IoIosArrowDown, IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
@@ -17,28 +17,34 @@ const Menu = () => {
 
     const [count, setCount] = useState(0);
     const [itemPerPage,] = useState(6);
-    const [currentPage, setCurrentPage] = useState();
+    const [currentPage, setCurrentPage] = useState(1);
+    const [filter, setFilter] = useState('');
+    const [sort, setSort] = useState('');
 
     const numberOfPages = Math.ceil(count / itemPerPage);
     const pages = [...Array(numberOfPages).keys()].map(e => e + 1);
 
     useEffect(() => {
-        axiosPublic.get('/menuCount')
+        axiosPublic.get(`/menuCount?filter=${filter}`)
             .then(data => {
                 setCount(data.data.result);
             })
-    }, [axiosPublic])
+    }, [axiosPublic, filter])
 
     const { data: menu = [] } = useQuery({
-        queryKey: ['count', currentPage, itemPerPage],
+        queryKey: ['count', currentPage, itemPerPage, filter, sort],
         queryFn: async () => {
-            const result = await axiosPublic.get(`/all-menu?page=${currentPage}&size=${itemPerPage}`);
+            const result = await axiosPublic.get(`/all-menu?page=${currentPage}&size=${itemPerPage}&filter=${filter}&sort=${sort}`);
             return result.data;
         }
     })
 
     const handelPaginationBnt = value => {
         setCurrentPage(value);
+    }
+    const handelResetBtn = () => {
+        setFilter('');
+        setSort('');
     }
 
     if (isLoading) return <p className="text-center text-2xl font-serif text-cyan-500 mt-16 mb-10">Loading...</p>
@@ -68,15 +74,20 @@ const Menu = () => {
 
             <SectionHeading heading='Our Delicious Menu' subHeading='Explore a variety of freshly prepared dishes made with love and quality ingredients. From starters to desserts, every bite brings you the perfect taste of happiness.'></SectionHeading>
 
-            <div className=' flex justify-around items-center mb-10'>
-                <div>
-                    <details className="dropdown">
-                        <summary className="btn m-1"><span className='flex items-center gap-1.5'>Filter By Category <IoIosArrowDown></IoIosArrowDown></span></summary>
-                        <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 2</a></li>
-                        </ul>
-                    </details>
+            <div className='md:flex gap-2 md:gap-0 justify-around items-center mb-6'>
+                <div className="flex flex-col gap-3">
+                    <select onChange={e => {
+                        setFilter(e.target.value)
+                        setCurrentPage(1)
+                    }} value={filter} className="bg-white dark:bg-gray-900 px-2.5 py-1.5" name="category" id="category">
+                        <option value="">Filter by category</option>
+                        <option value="Popular Menu">Popular Menu</option>
+                        <option value="Starters">Starters</option>
+                        <option value="Main Course">Main Course</option>
+                        <option value="Desserts">Desserts</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Chef’s Specials">Chef’s Specials</option>
+                    </select>
                 </div>
 
                 <form className="mx-auto md:w-1/2">
@@ -122,8 +133,20 @@ const Menu = () => {
 
 
                 <div>
-                    <button className="btn ">Reset</button>
+                    <div className="flex flex-col gap-3">
+                        <select onChange={e => {
+                            setSort(e.target.value)
+                            setCurrentPage(1)
+                        }} value={filter} className="bg-white dark:bg-gray-900 px-2.5 py-1.5" name="category" id="category">
+                            <option value="">Sort By Price</option>
+                            <option value="asc">Accending Order</option>
+                            <option value="dsc">Descending Order</option>
+                        </select>
+                    </div>
                 </div>
+            </div>
+            <div className="flex justify-center mb-12">
+                <button onClick={handelResetBtn} className="cursor-pointer text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800 mt-2.5">Reset Page</button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
@@ -132,22 +155,18 @@ const Menu = () => {
                 }
             </div>
 
+            {/* pagination section */}
             <div className='flex justify-center my-12'>
                 <div className="flex">
-                    {/* Previous Button */}
                     <button onClick={() => handelPaginationBnt(currentPage - 1)} disabled={currentPage === 1} className='btn btn-outline'>
                         <IoIosArrowRoundBack></IoIosArrowRoundBack>    Prev
                     </button>
-
-                    {/* Page Number  */}
                     {
                         pages.map((page) =>
                             <button key={page} onClick={() => handelPaginationBnt(page)}
                                 className={`items-center ${currentPage === page ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-600 hover:text-white'} hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:flex `}>{page}
                             </button>)
                     }
-
-                    {/* Next Button */}
                     <button onClick={() => handelPaginationBnt(currentPage + 1)} disabled={currentPage === numberOfPages} className='btn btn-outline'>
                         Next<IoIosArrowRoundForward ></IoIosArrowRoundForward >
                     </button>

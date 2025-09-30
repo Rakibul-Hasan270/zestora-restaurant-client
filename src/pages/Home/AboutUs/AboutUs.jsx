@@ -4,7 +4,7 @@ import img from '../../../assets/Welcome.json'
 
 const AboutUs = () => {
     return (
-        <div className="max-w-[1400px] mx-auto bg-base-100 md:mb-28 md:mt-28">
+        <div className="md:max-w-[1400px] mx-auto bg-base-100 md:mb-28 md:mt-28">
             <p className="text-5xl font-bold text-center mb-12">About Us</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 items-stretch">

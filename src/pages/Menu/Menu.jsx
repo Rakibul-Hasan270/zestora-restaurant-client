@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { GrPowerReset } from "react-icons/gr";
 
 
 const Menu = () => {
@@ -159,7 +160,7 @@ const Menu = () => {
                 </div>
             </div>
             <div className="flex justify-center mb-12">
-                <button onClick={handelReset} className="cursor-pointer text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800 mt-2.5">Reset Page</button>
+                <button onClick={handelReset} className="cursor-pointer text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800 mt-2.5 flex items-center gap-2.5"><GrPowerReset className="text-xl"></GrPowerReset>Reset Page</button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">

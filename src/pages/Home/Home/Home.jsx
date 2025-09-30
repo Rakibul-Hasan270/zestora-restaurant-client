@@ -1,8 +1,8 @@
 import AboutUs from "../AboutUs/AboutUs";
 import Carousel from "../Banner/Carousel";
-import CallToAction from "../CallToAction/CallToAction";
 import Featured from "../Featured/Featured";
 import PopularMenu from "../PopularMenu/PopularMenu";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
     return (
@@ -13,9 +13,9 @@ const Home = () => {
                 <PopularMenu></PopularMenu>
             </div>
             <Featured></Featured>
-            <div className="max-w-8xl mx-auto">
-                <CallToAction></CallToAction>
+            <div className="max-w-7xl mx-auto">
                 <AboutUs></AboutUs>
+                <Testimonial></Testimonial>
             </div>
         </div>
     );

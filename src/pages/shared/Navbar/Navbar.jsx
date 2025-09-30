@@ -1,7 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/Logo/logo.png';
+import useAuth from "../../../hooks/useAuth";
+import { MdDashboardCustomize } from "react-icons/md";
+import { BiLogOutCircle } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+
 
 const Navbar = () => {
+    const { user, logOut } = useAuth();
 
     const links = <div className='md:flex justify-end items-center'>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Home</NavLink></li>
@@ -31,9 +37,9 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            {/* <div title={user ? user.displayName : 'Profile'} className="navbar-end mr-4 md:w-[100px]">
-                <div className="dropdown dropdown-end bg-cyan-700 rounded-field">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            <div className="navbar-end mr-4 md:w-[100px]">
+                <div className="dropdown dropdown-end rounded-field border-2 border-cyan-400 rounded-full">
+                    <div title={user ? user.displayName : 'Profile'} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             {
                                 user ? <img src={user?.photoURL} alt="" /> : <img alt="Tailwind CSS Navbar component"
@@ -45,15 +51,15 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li>
-                            <a>
-                                Profile
+                            <a className="hover:bg-cyan-700">
+                               <CgProfile></CgProfile> Profile
                             </a>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><a className="hover:bg-cyan-700"><MdDashboardCustomize></MdDashboardCustomize> Dashboard</a></li>
+                        <li onClick={() => logOut()}><a className="hover:bg-cyan-700"><BiLogOutCircle></BiLogOutCircle> Logout</a></li>
                     </ul>
                 </div>
-            </div> */}
+            </div>
         </div >
     );
 };

@@ -2,7 +2,7 @@ import { FaCartFlatbed, FaDollarSign, FaRegStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const MenuCard = ({ menu }) => {
-    const { category, description, image, name, price, rating } = menu;
+    const { category, description, image, name, price, rating, _id } = menu;
 
     return (
         <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
@@ -35,10 +35,10 @@ const MenuCard = ({ menu }) => {
                         </div>
                     </div>
                     <div className="flex justify-center mt-5">
-                <Link to='/menu'>
-                    <button className="cursor-pointer text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800 mt-2.5">Details</button>
-                </Link>
-            </div>
+                        <Link to={`/menuDetails/${_id}`}>
+                            <button className="cursor-pointer text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800 mt-2.5">Details</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

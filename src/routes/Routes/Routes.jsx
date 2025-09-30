@@ -6,6 +6,7 @@ import Reservation from "../../pages/Reservation/Reservation";
 import Contact from "../../pages/Contact/Contact";
 import SignIn from "../../pages/SignIn/SignIn";
 import SignUp from "../../pages/SignUp/SignUp";
+import MenuDetails from "../../components/MenuDetails/MenuDetails";
 
 
 export const router = createBrowserRouter([
@@ -24,6 +25,11 @@ export const router = createBrowserRouter([
             {
                 path: 'reservation',
                 element: <Reservation></Reservation>
+            },
+            {
+                path: '/menuDetails/:id',
+                element: <MenuDetails></MenuDetails>,
+                loader: ({ params }) => fetch(`http://localhost:9000/menu/${params.id}`)
             },
             {
                 path: 'contact',

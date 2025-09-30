@@ -52,10 +52,10 @@ const Navbar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li>
                             <a className="hover:bg-cyan-700">
-                               <CgProfile></CgProfile> Profile
+                                <CgProfile></CgProfile> Profile
                             </a>
                         </li>
-                        <li><a className="hover:bg-cyan-700"><MdDashboardCustomize></MdDashboardCustomize> Dashboard</a></li>
+                        <li><a className="hover:bg-cyan-700"><Link to='/dashboard/cart' className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize> Dashboard</Link></a></li>
                         <li onClick={() => logOut()}><a className="hover:bg-cyan-700"><BiLogOutCircle></BiLogOutCircle> Logout</a></li>
                     </ul>
                 </div>

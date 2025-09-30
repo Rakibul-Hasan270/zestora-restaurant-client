@@ -96,7 +96,7 @@ const CallToAction = () => {
                             </div>
 
                             {/* for image  */}
-                            <div className="mb-3">
+                            <div className="mb-4">
                                 <label
                                     htmlFor="image"
                                     className="block text-sm text-gray-500 dark:text-gray-300"
@@ -137,7 +137,7 @@ const CallToAction = () => {
                             </div>
 
                             {/* date of  booking */}
-                            <div>
+                            <div className="mb-3">
                                 <label
                                     htmlFor="date"
                                     className="block text-sm text-gray-500 dark:text-gray-300"
@@ -166,14 +166,14 @@ const CallToAction = () => {
                                     Comment Box
                                 </label>
 
-                                <input
-                                    {...register('comment', { required: true, minLength: 10, maxLength: 30 })}
+                                <textarea
+                                    {...register('comment', { required: true, minLength: 10, maxLength: 60 })}
                                     placeholder="lorem..."
                                     className="block mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-4 h-32 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
-                                ></input>
+                                ></textarea>
                             </div>
                             <div>{errors.comment?.type === 'minLength' && <p className="text-red-600">Comment must be 10 characters</p>}</div>
-                            <div>{errors.comment?.type === 'maxLength' && <p className="text-red-600">Comment must be less then 30 characters</p>}</div>
+                            <div>{errors.comment?.type === 'maxLength' && <p className="text-red-600">Comment must be less then 60 characters</p>}</div>
 
                             < button
                                 type="submit"

@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from '../../../assets/logo.png';
+import logo from '../../../assets/Logo/logo.png';
 
 const Navbar = () => {
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link className="w-[50px]" to='/'><img className="rounded-full bg-cyan-800" src={logo} alt="" /></Link>
+                <Link className="hidden lg:block w-[50px]" to='/'><img className="rounded-full bg-cyan-800" src={logo} alt="" /></Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

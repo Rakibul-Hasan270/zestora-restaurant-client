@@ -29,7 +29,7 @@ const CallToAction = () => {
                 comment: data.comment,
                 date: data.date,
             }
-            const resPostData = await axiosPublic.post('/reservation-info', userInfo);
+            const resPostData = await axiosPublic.post('/reservation', userInfo);
             if (resPostData.data.insertedId) {
                 toast.success(`Mr. ${data.name}, your reservation has been confirmed!`);
                 reset();

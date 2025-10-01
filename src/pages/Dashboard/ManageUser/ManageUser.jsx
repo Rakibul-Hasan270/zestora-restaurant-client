@@ -4,6 +4,7 @@ import useAuth from "../../../hooks/useAuth";
 import { FaUsers } from "react-icons/fa6";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const ManageUser = () => {
     const axiosSecure = useAxiosSecure();
@@ -41,6 +42,36 @@ const ManageUser = () => {
                             text: `${user.name} has been deleted.`,
                             icon: "success"
                         });
+                        toast.success(`${user.name} has been delete`);
+                    }
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+        });
+    }
+
+    const handelMakeAdmin = user => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, make it admin now!"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const resPatch = await axiosSecure.patch(`/users/${user._id}`);
+                    if (resPatch.data.modifiedCount > 0) {
+                        refetch();
+                        Swal.fire({
+                            title: "Yes Admin!",
+                            text: `${user.name} has been Admin now.`,
+                            icon: "success"
+                        });
+                        toast.success(`${user.name} has been admin now`);
                     }
                 } catch (err) {
                     console.log(err);
@@ -88,7 +119,7 @@ const ManageUser = () => {
                                         {user.email}
                                     </td>
                                     <td>
-                                        <button title="Make Admin" className="btn"><FaUsers className="text-cyan-400"></FaUsers></button>
+                                        {user.role === 'admin' ? <p className="text-cyan-500">Admin</p> : <button onClick={() => handelMakeAdmin(user)} title="Make Admin" className="btn"><FaUsers className="text-cyan-400"></FaUsers></button>}
                                     </td>
                                     <th>
                                         <button onClick={() => handelDeleteUser(user)} title="Delete User" className="btn"><FaTrashAlt className="text-red-600"></FaTrashAlt></button>

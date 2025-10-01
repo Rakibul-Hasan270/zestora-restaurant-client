@@ -7,6 +7,14 @@ import Contact from "../../pages/Contact/Contact";
 import SignIn from "../../pages/SignIn/SignIn";
 import SignUp from "../../pages/SignUp/SignUp";
 import MenuDetails from "../../components/MenuDetails/MenuDetails";
+import Dashboard from "../../pages/Dashboard/Dashboard/Dashboard";
+import UsersCart from "../../pages/Dashboard/UsersCart/UsersCart";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import ManageMenuItem from "../../pages/Dashboard/ManageMenuItem/ManageMenuItem";
+import AddNewDesh from "../../pages/Dashboard/AddNewDesh/AddNewDesh";
+import ManageReservation from "../../pages/Dashboard/ManageReservation/ManageReservation";
+import ViewOrder from "../../pages/Dashboard/ViewOrder/ViewOrder";
+import ManageUser from "../../pages/Dashboard/ManageUser/ManageUser";
 
 
 export const router = createBrowserRouter([
@@ -28,7 +36,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/menuDetails/:id',
-                element: <MenuDetails></MenuDetails>,
+                element: <PrivateRoutes><MenuDetails></MenuDetails></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:9000/menu/${params.id}`)
             },
             {
@@ -42,6 +50,38 @@ export const router = createBrowserRouter([
             {
                 path: 'signUp',
                 element: <SignUp></SignUp>
+            }
+        ]
+    },
+    {
+        path: 'dashboard',
+        element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+        children: [
+            // admin role 
+            {
+                path: 'manageMenuItem',
+                element: <ManageMenuItem></ManageMenuItem>
+            },
+            {
+                path: 'addDesh',
+                element: <AddNewDesh></AddNewDesh>
+            },
+            {
+                path: 'manageReservation',
+                element: <ManageReservation></ManageReservation>
+            },
+            {
+                path: 'viewOrder',
+                element: <ViewOrder></ViewOrder>
+            },
+            {
+                path: 'manageUser',
+                element: <ManageUser></ManageUser>
+            },
+            // user role 
+            {
+                path: 'cart',
+                element: <UsersCart></UsersCart>
             }
         ]
     }

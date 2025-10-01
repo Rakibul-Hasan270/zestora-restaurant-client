@@ -10,10 +10,11 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const { createUser, updateUserProfile, googleSignInUser } = useAuth();
-    const axiosPublic = useAxiosPublic();
-    const navigate = useNavigate();
     const location = useLocation();
+    const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
     let from = location.state?.from?.pathname || "/";
+
 
     const onSubmit = async (data) => {
         const imageFile = { image: data.image[0] };
@@ -33,8 +34,8 @@ const SignUp = () => {
                 await updateUserProfile(name, photoUrl);
                 const result = await axiosPublic.post('/users', userInfo);
                 if (result.data.insertedId) {
-                    toast.success('User created Successfully');
                     navigate(from, { replace: true });
+                    toast.success('User created Successfully');
                     reset();
                 }
             } catch (err) {
@@ -50,7 +51,7 @@ const SignUp = () => {
                 name: res.user?.displayName,
                 image: res.user?.photoURL
             }
-            console.log(userInfo);
+            // console.log(userInfo);
             if (res.user?.email) {
                 await axiosPublic.post('/users', userInfo);
             }
@@ -60,6 +61,8 @@ const SignUp = () => {
             console.log(err);
         }
     }
+
+    console.log(location.state?.from?.pathname);
 
     return (
         <section className="mt-12 mb-10">

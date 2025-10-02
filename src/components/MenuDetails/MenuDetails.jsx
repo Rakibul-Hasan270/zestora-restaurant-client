@@ -3,13 +3,15 @@ import { useLoaderData } from "react-router-dom";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
+import useAuth from "../../hooks/useAuth";
 
 const MenuDetails = () => {
     const { image, name, price, rating, category, description, _id } = useLoaderData();
     const axiosSecure = useAxiosSecure();
+    const { user } = useAuth();
 
     const handelAddToCard = async () => {
-        const itemInfo = { image, name, price, rating, category, description, menuId: _id }
+        const itemInfo = { image, name, email: user.email, price, rating, category, description, menuId: _id };
         try {
             const resAddCart = await axiosSecure.post(`/cart`, itemInfo);
             if (resAddCart.data.insertedId) {

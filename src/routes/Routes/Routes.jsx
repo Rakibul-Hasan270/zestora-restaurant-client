@@ -16,6 +16,7 @@ import ManageReservation from "../../pages/Dashboard/ManageReservation/ManageRes
 import ViewOrder from "../../pages/Dashboard/ViewOrder/ViewOrder";
 import ManageUser from "../../pages/Dashboard/ManageUser/ManageUser";
 import UpdateMenuItem from "../../pages/Dashboard/UpdateMenuItem/UpdateMenuItem";
+import UserReservation from "../../pages/Dashboard/UserReservation/UserReservation";
 
 
 export const router = createBrowserRouter([
@@ -58,6 +59,7 @@ export const router = createBrowserRouter([
         path: 'dashboard',
         element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
         children: [
+
             // admin role 
             {
                 path: 'manageMenuItem',
@@ -84,10 +86,15 @@ export const router = createBrowserRouter([
                 path: 'manageUser',
                 element: <ManageUser></ManageUser>
             },
+
             // user role 
             {
-                path: 'cart',
+                path: 'userCart',
                 element: <UsersCart></UsersCart>
+            },
+            {
+                path: 'userReservation',
+                element: <UserReservation></UserReservation>
             }
         ]
     }

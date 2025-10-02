@@ -55,8 +55,8 @@ const Navbar = () => {
                                 <CgProfile></CgProfile> Profile
                             </a>
                         </li>
-                        
-                        <li><Link className="hover:bg-cyan-700" to='/dashboard/cart'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link></li>
+
+                        <li><Link className="hover:bg-cyan-700" to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link></li>
                         <li onClick={() => logOut()}><a className="hover:bg-cyan-700"><BiLogOutCircle></BiLogOutCircle> Logout</a></li>
                     </ul>
                 </div>

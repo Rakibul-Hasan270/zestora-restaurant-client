@@ -9,6 +9,7 @@ import useManageReservation from "../../../hooks/useManageReservation";
 import useManageMenuItem from "../../../hooks/useManageMenuItem";
 import useViewOrder from "../../../hooks/useViewOrder";
 import { RiPresentationFill } from "react-icons/ri";
+import useUserCart from "../../../hooks/useUserCart";
 
 
 const Dashboard = () => {
@@ -16,6 +17,7 @@ const Dashboard = () => {
     const [reservation] = useManageReservation();
     const [menuItem] = useManageMenuItem();
     const [order] = useViewOrder();
+    const [cart] = useUserCart();
     const isAdmin = false;
 
     return (
@@ -69,7 +71,7 @@ const Dashboard = () => {
                             <NavLink className={({ isActive }) =>
                                 `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><FaShoppingCart></FaShoppingCart>My Cart({ })</span></NavLink>
+                            } to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><FaShoppingCart></FaShoppingCart>My Cart ({ cart.length})</span></NavLink>
 
                             <NavLink className={({ isActive }) =>
                                 `flex items-center gap-[7px] px-3 py-2 rounded-md transition 

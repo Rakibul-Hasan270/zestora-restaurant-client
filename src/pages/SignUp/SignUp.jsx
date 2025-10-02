@@ -39,6 +39,7 @@ const SignUp = () => {
                     reset();
                 }
             } catch (err) {
+                toast.error(err.message);
                 console.log(err);
             }
         }

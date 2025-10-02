@@ -15,6 +15,7 @@ import AddNewDesh from "../../pages/Dashboard/AddNewDesh/AddNewDesh";
 import ManageReservation from "../../pages/Dashboard/ManageReservation/ManageReservation";
 import ViewOrder from "../../pages/Dashboard/ViewOrder/ViewOrder";
 import ManageUser from "../../pages/Dashboard/ManageUser/ManageUser";
+import UpdateMenuItem from "../../pages/Dashboard/UpdateMenuItem/UpdateMenuItem";
 
 
 export const router = createBrowserRouter([
@@ -61,6 +62,11 @@ export const router = createBrowserRouter([
             {
                 path: 'manageMenuItem',
                 element: <ManageMenuItem></ManageMenuItem>
+            },
+            {
+                path: 'updateMenuItem/:id',
+                element: <UpdateMenuItem></UpdateMenuItem>,
+                loader: ({ params }) => fetch(`http://localhost:9000/menu/${params.id}`)
             },
             {
                 path: 'addDesh',

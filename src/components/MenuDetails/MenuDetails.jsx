@@ -1,13 +1,23 @@
 import { Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
 import SectionHeading from "../SectionHeading/SectionHeading";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 const MenuDetails = () => {
     const { image, name, price, rating, category, description, _id } = useLoaderData();
+    const axiosSecure = useAxiosSecure();
 
     const handelAddToCard = async () => {
-        console.log('Add To Cart Btn');
-        alert('comming soon ')
+        const itemInfo = { image, name, price, rating, category, description, menuId: _id }
+        try {
+            const resAddCart = await axiosSecure.post(`/cart`, itemInfo);
+            if (resAddCart.data.insertedId) {
+                toast.success(`${name} added to your cart`);
+            }
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     return (
@@ -51,7 +61,7 @@ const MenuDetails = () => {
                                 ${price}
                             </span>
 
-                            <button onClick={() => handelAddToCard(_id)} className="bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 text-white font-semibold rounded-xl text-sm px-8 py-3 shadow-lg transform transition duration-300 hover:scale-105">
+                            <button onClick={handelAddToCard} className="bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 text-white font-semibold rounded-xl text-sm px-8 py-3 shadow-lg transform transition duration-300 hover:scale-105">
                                 Add to cart
                             </button>
                         </div>

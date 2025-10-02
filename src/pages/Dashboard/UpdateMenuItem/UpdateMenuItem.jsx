@@ -1,13 +1,16 @@
-import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
+import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
-const AddNewDesh = () => {
+const UpdateMenuItem = () => {
+    const { category, description, name, price, rating, _id } = useLoaderData();
+
     const { register, formState: { errors }, handleSubmit } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
@@ -28,23 +31,29 @@ const AddNewDesh = () => {
                 price: parseFloat(data.price),
                 rating: parseFloat(data.rating)
             }
-            const resPostData = await axiosSecure.post('/menu', menuInfo);
-            if (resPostData.data.insertedId) {
-                toast.success(`${data.name} added to menu cart`);
+            const resPostData = await axiosSecure.patch(`/menu/${_id}`, menuInfo);
+            console.log(resPostData);
+            if (resPostData.data.modifiedCount > 0) {
+                toast.success(`updated cart with ${data.name}`);
                 // todo: must added navigate 
             }
         }
     }
 
 
+
     return (
         <div>
-            <SectionHeading heading='Create a menu item' subHeading='Bring your delicious creation online with image, price, and rating'></SectionHeading>
+            <SectionHeading heading='Update an Item' subHeading='alwase update'></SectionHeading>
+
+
+
             <form onSubmit={handleSubmit(onSubmit)} className="mx-auto">
                 {/* name fild  */}
                 <div className="relative z-0 w-full mb-5 group">
                     <input
                         {...register('name', { required: true })}
+                        defaultValue={name}
                         type="name"
                         name="name"
                         id="name"
@@ -70,6 +79,7 @@ const AddNewDesh = () => {
                 <div className="relative z-0 w-full mb-5 group">
                     <input
                         {...register('category', { required: true })}
+                        defaultValue={category}
                         type="category"
                         name="category"
                         id="category"
@@ -96,6 +106,7 @@ const AddNewDesh = () => {
                 <div className="relative z-0 w-full mb-5 group">
                     <input
                         {...register('description', { required: true })}
+                        defaultValue={description}
                         type="description"
                         name="description"
                         id="description"
@@ -134,37 +145,51 @@ const AddNewDesh = () => {
                     <div className="relative z-0 w-full mb-5 group">
                         <input
                             {...register('price', { required: true })}
+                            defaultValue={price}
                             type="number"
                             name="price"
                             id="price"
-                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 
+        border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 
+        dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             placeholder=" "
                         />
                         <label
                             htmlFor="price"
-                            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 
+        duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
+        peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
+        peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 
+        peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                         >
                             Item Price
                         </label>
-                        {errors.price && <span className="text-red-500 text-xs">Table no is required</span>}
+                        {errors.price && <span className="text-red-500 text-xs">Price is required</span>}
                     </div>
 
                     <div className="relative z-0 w-full mb-5 group">
                         <input
                             {...register('rating', { required: true })}
+                            defaultValue={rating}
                             type="number"
                             name="rating"
                             id="rating"
-                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 
+        border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 
+        dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                             placeholder=" "
                         />
                         <label
                             htmlFor="rating"
-                            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 
+        duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
+        peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
+        peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 
+        peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                         >
                             Item Rating
                         </label>
-                        {errors.rating && <span className="text-red-500 text-xs">Table no is required</span>}
+                        {errors.rating && <span className="text-red-500 text-xs">Rating is required</span>}
                     </div>
                 </div>
 
@@ -181,4 +206,4 @@ const AddNewDesh = () => {
     );
 };
 
-export default AddNewDesh;
+export default UpdateMenuItem;

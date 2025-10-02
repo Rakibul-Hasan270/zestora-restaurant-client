@@ -1,26 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import useAuth from "../../../hooks/useAuth";
 import { FaUsers } from "react-icons/fa6";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import useManageUsers from "../../../hooks/useManageUsers";
+import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 
 const ManageUser = () => {
     const axiosSecure = useAxiosSecure();
-    const { user } = useAuth();
+    const [users, refetch, isLoading] = useManageUsers();
 
-    const { data: users = [], isLoading, refetch } = useQuery({
-        queryKey: ['users', user?.email],
-        queryFn: async () => {
-            try {
-                const resUser = await axiosSecure.get('/users');
-                return resUser.data;
-            } catch (err) {
-                console.log(err);
-            }
-        }
-    })
 
     const handelDeleteUser = user => {
         Swal.fire({
@@ -83,6 +72,13 @@ const ManageUser = () => {
     if (isLoading) return <p className="text-center text-2xl font-serif text-cyan-500 mt-16 mb-10">Loading...</p>
     return (
         <div>
+            <SectionHeading heading='Manage Your People' subHeading='Empower admins, organize members, and streamline access'></SectionHeading>
+
+            <div className="flex justify-around mb-8">
+                <p className="text-3xl text-cyan-500 font-semibold">Total Admin: {users.filter(user => user.role === 'admin').length}</p>
+                <p className="text-3xl text-cyan-500 font-semibold">Total User: {users.filter(user => user.role !== 'admin').length}</p>
+            </div>
+
             <div className="overflow-x-auto">
                 <table className="table">
                     <thead>

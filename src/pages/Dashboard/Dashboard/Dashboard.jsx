@@ -18,7 +18,6 @@ const Dashboard = () => {
     const [menuItem] = useManageMenuItem();
     const [order] = useViewOrder();
     const [cart] = useUserCart();
-    const isAdmin = false;
 
     return (
         <div className="max-w-6xl mx-auto md:flex gap-6">
@@ -30,7 +29,6 @@ const Dashboard = () => {
                         </Link>
                     </div>
 
-                    {isAdmin ? <>
                         {/* admin role  */}
                         <li>
                             <NavLink className={({ isActive }) => `flex items-center gap-[7px] px-3 py-2 rounded-md transition ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
@@ -64,8 +62,7 @@ const Dashboard = () => {
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
                             } to='/dashboard/manageUser'><span className="flex items-center gap-[7px]"><FaUserEdit></FaUserEdit>Manage User ({users.length})</span></NavLink>
                         </li>
-                    </>
-                        :
+                        
                         // user role
                         <>
                             <NavLink className={({ isActive }) =>
@@ -76,8 +73,8 @@ const Dashboard = () => {
                             <NavLink className={({ isActive }) =>
                                 `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/userReservation'><span className="flex items-center gap-[7px]"><RiPresentationFill></RiPresentationFill>Reserv Table({ })</span></NavLink>
-                        </>}
+                            } to='/dashboard/userReservation'><span className="flex items-center gap-[7px]"><RiPresentationFill></RiPresentationFill>Reserv Table({reservation.length })</span></NavLink>
+                        </>
                 </div>
                 <div className="divider divider-accent">zestora</div>
                 {/* home menu  */}

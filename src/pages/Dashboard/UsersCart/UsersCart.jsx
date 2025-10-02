@@ -1,8 +1,6 @@
-import { MdOutlineEdit } from "react-icons/md";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import useUserCart from "../../../hooks/useUserCart";
 import { FaTrashAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
@@ -62,7 +60,6 @@ const UsersCart = () => {
                                 <th>Name</th>
                                 <th>Category</th>
                                 <th>Price</th>
-                                <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -91,11 +88,6 @@ const UsersCart = () => {
                                         <span className="badge badge-ghost badge-sm text-cyan-500">Rating: {cart.rating}</span>
                                     </td>
                                     <td className="text-cyan-500 flex items-center gap-2"><FaBangladeshiTakaSign></FaBangladeshiTakaSign> {cart.price}</td>
-                                    <td>
-                                        <Link to={`/dashboard/updateMenuItem/${cart._id}`}>
-                                            <button title="Edit Item" className="btn bg-cyan-700"><MdOutlineEdit></MdOutlineEdit></button>
-                                        </Link>
-                                    </td>
                                     <th>
                                         <button onClick={() => handelDeleteItem(cart)} title="Delete Item" className="btn"><FaTrashAlt className="text-red-600"></FaTrashAlt></button>
                                     </th>

@@ -10,6 +10,7 @@ import useManageMenuItem from "../../../hooks/useManageMenuItem";
 import useViewOrder from "../../../hooks/useViewOrder";
 import { RiPresentationFill } from "react-icons/ri";
 import useUserCart from "../../../hooks/useUserCart";
+import useAdmin from "../../../hooks/useAdmin";
 
 
 const Dashboard = () => {
@@ -18,6 +19,7 @@ const Dashboard = () => {
     const [menuItem] = useManageMenuItem();
     const [order] = useViewOrder();
     const [cart] = useUserCart();
+    const [isAdmin] = useAdmin();
 
     return (
         <div className="max-w-6xl mx-auto md:flex gap-6">
@@ -29,52 +31,56 @@ const Dashboard = () => {
                         </Link>
                     </div>
 
-                        {/* admin role  */}
-                        <li>
-                            <NavLink className={({ isActive }) => `flex items-center gap-[7px] px-3 py-2 rounded-md transition ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/manageMenuItem'><span className="flex items-center gap-[7px]"><MdMenu></MdMenu>Menu Item ({menuItem.length})</span></NavLink>
-                        </li>
+                    {/* admin role  */}
+                    {
+                        isAdmin ?
+                            <>
+                                <li>
+                                    <NavLink className={({ isActive }) => `flex items-center gap-[7px] px-3 py-2 rounded-md transition ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
+                                    } to='/dashboard/manageMenuItem'><span className="flex items-center gap-[7px]"><MdMenu></MdMenu>Menu Item ({menuItem.length})</span></NavLink>
+                                </li>
 
-                        <li>
-                            <NavLink className={({ isActive }) =>
-                                `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
+                                <li>
+                                    <NavLink className={({ isActive }) =>
+                                        `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/addDesh'><span className="flex items-center gap-[7px]"><RiAddLargeLine></RiAddLargeLine>Add New Desh</span></NavLink>
-                        </li>
+                                    } to='/dashboard/addDesh'><span className="flex items-center gap-[7px]"><RiAddLargeLine></RiAddLargeLine>Add New Desh</span></NavLink>
+                                </li>
 
-                        <li>
-                            <NavLink className={({ isActive }) =>
-                                `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
+                                <li>
+                                    <NavLink className={({ isActive }) =>
+                                        `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/manageReservation'><span className="flex items-center gap-[7px]"><FaWindowRestore></FaWindowRestore>Reservation ({reservation.length})</span></NavLink>
-                        </li>
+                                    } to='/dashboard/manageReservation'><span className="flex items-center gap-[7px]"><FaWindowRestore></FaWindowRestore>Reservation ({reservation.length})</span></NavLink>
+                                </li>
 
-                        <li>
-                            <NavLink className={({ isActive }) =>
-                                `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
+                                <li>
+                                    <NavLink className={({ isActive }) =>
+                                        `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/viewOrder'><span className="flex items-center gap-[7px]"><HiViewGridAdd></HiViewGridAdd>View Order ({order.length})</span></NavLink>
-                        </li>
+                                    } to='/dashboard/viewOrder'><span className="flex items-center gap-[7px]"><HiViewGridAdd></HiViewGridAdd>View Order ({order.length})</span></NavLink>
+                                </li>
 
-                        <li>
-                            <NavLink className={({ isActive }) =>
-                                `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
+                                <li>
+                                    <NavLink className={({ isActive }) =>
+                                        `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/manageUser'><span className="flex items-center gap-[7px]"><FaUserEdit></FaUserEdit>Manage User ({users.length})</span></NavLink>
-                        </li>
-                        
-                        // user role
-                        <>
-                            <NavLink className={({ isActive }) =>
-                                `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
+                                    } to='/dashboard/manageUser'><span className="flex items-center gap-[7px]"><FaUserEdit></FaUserEdit>Manage User ({users.length})</span></NavLink>
+                                </li>
+                            </>
+                            :
+                            // user role
+                            <>
+                                <NavLink className={({ isActive }) =>
+                                    `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><FaShoppingCart></FaShoppingCart>My Cart ({ cart.length})</span></NavLink>
+                                } to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><FaShoppingCart></FaShoppingCart>My Cart ({cart.length})</span></NavLink>
 
-                            <NavLink className={({ isActive }) =>
-                                `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
+                                <NavLink className={({ isActive }) =>
+                                    `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                            } to='/dashboard/userReservation'><span className="flex items-center gap-[7px]"><RiPresentationFill></RiPresentationFill>Reserv Table({reservation.length })</span></NavLink>
-                        </>
+                                } to='/dashboard/userReservation'><span className="flex items-center gap-[7px]"><RiPresentationFill></RiPresentationFill>Reserv Table({reservation.length})</span></NavLink>
+                            </>}
                 </div>
                 <div className="divider divider-accent">zestora</div>
                 {/* home menu  */}

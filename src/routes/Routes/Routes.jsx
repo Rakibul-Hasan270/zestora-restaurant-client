@@ -17,6 +17,7 @@ import ViewOrder from "../../pages/Dashboard/ViewOrder/ViewOrder";
 import ManageUser from "../../pages/Dashboard/ManageUser/ManageUser";
 import UpdateMenuItem from "../../pages/Dashboard/UpdateMenuItem/UpdateMenuItem";
 import UserReservation from "../../pages/Dashboard/UserReservation/UserReservation";
+import AdminRoutes from "../AdminRoutes/AdminRoutes";
 
 
 export const router = createBrowserRouter([
@@ -63,28 +64,28 @@ export const router = createBrowserRouter([
             // admin role 
             {
                 path: 'manageMenuItem',
-                element: <ManageMenuItem></ManageMenuItem>
+                element: <AdminRoutes><ManageMenuItem></ManageMenuItem></AdminRoutes>
             },
             {
                 path: 'updateMenuItem/:id',
-                element: <UpdateMenuItem></UpdateMenuItem>,
+                element: <AdminRoutes><UpdateMenuItem></UpdateMenuItem></AdminRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:9000/menu/${params.id}`)
             },
             {
                 path: 'addDesh',
-                element: <AddNewDesh></AddNewDesh>
+                element: <AdminRoutes><AddNewDesh></AddNewDesh></AdminRoutes>
             },
             {
                 path: 'manageReservation',
-                element: <ManageReservation></ManageReservation>
+                element: <AdminRoutes><ManageReservation></ManageReservation></AdminRoutes>
             },
             {
                 path: 'viewOrder',
-                element: <ViewOrder></ViewOrder>
+                element: <AdminRoutes><ViewOrder></ViewOrder></AdminRoutes>
             },
             {
                 path: 'manageUser',
-                element: <ManageUser></ManageUser>
+                element: <AdminRoutes><ManageUser></ManageUser></AdminRoutes>
             },
 
             // user role 

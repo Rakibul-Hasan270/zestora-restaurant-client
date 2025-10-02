@@ -10,7 +10,11 @@ const useManageUsers = () => {
         queryKey: ['users', user?.email],
         queryFn: async () => {
             try {
-                const resUser = await axiosSecure.get('/users');
+                const resUser = await axiosSecure.get('/users', {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('access-token')}`
+                    }
+                });
                 return resUser.data;
             } catch (err) {
                 console.log(err);

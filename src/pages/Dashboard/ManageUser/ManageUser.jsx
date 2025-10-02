@@ -52,7 +52,7 @@ const ManageUser = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const resPatch = await axiosSecure.patch(`/users/${user._id}`);
+                    const resPatch = await axiosSecure.patch(`/users/admin/${user._id}`);
                     if (resPatch.data.modifiedCount > 0) {
                         refetch();
                         Swal.fire({

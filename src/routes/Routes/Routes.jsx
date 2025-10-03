@@ -91,11 +91,11 @@ export const router = createBrowserRouter([
             // user role 
             {
                 path: 'userCart',
-                element: <UsersCart></UsersCart>
+                element: <PrivateRoutes><UsersCart></UsersCart></PrivateRoutes>
             },
             {
                 path: 'userReservation',
-                element: <UserReservation></UserReservation>
+                element: <PrivateRoutes><UserReservation></UserReservation></PrivateRoutes>
             }
         ]
     }

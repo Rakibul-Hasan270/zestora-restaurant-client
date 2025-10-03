@@ -8,6 +8,7 @@ const useAdmin = () => {
 
     const { data: isAdmin, isPending: isAdminLoading } = useQuery({
         queryKey: [user?.email, 'isAdmin'],
+        enabled: !!user?.email, // 👈 শুধু যখন user আছে তখনই কল হবে
         queryFn: async () => {
             const resAdmin = await axiosSecure.get(`/users/admin/${user.email}`);
             console.log(resAdmin.data, 'from useAdmin.jsx');

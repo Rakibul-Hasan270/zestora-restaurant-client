@@ -51,7 +51,7 @@ const Footer = () => {
                 <div className="flex items-center justify-between">
                     <Link className="w-[50px] flex items-center gap-3" to='/'>
                         <img className="bg-cyan-500 rounded-full" src={logo} alt="" />
-                        <p className="text-xl font-serif text-cyan-500">Zest_Ora</p>
+                        <p className="text-xl hidden md:block font-serif text-cyan-500">Zest_Ora</p>
                     </Link>
                     <div className="flex -mx-2">
                         {/* Reddit Icon */}

@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import img from '../../../assets/Welcome.json'
+import SectionHeading from "../../../components/SectionHeading/SectionHeading";
+
 
 const AboutUs = () => {
     return (
-        <div className="md:max-w-[1400px] mx-auto bg-base-100 md:mb-28 md:mt-28">
-            <p className="text-5xl font-bold text-center mb-12">About Us</p>
+        <div className="md:max-w-[1400px] bg-base-100 md:mb-28 mt-16 md:mt-28 md:mx-auto">
+        <SectionHeading heading='About Us' subHeading='Get to know us'></SectionHeading>            
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 md:p-5 items-stretch">
 
-                <div className="bg-base-100 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between"
+                <div className="bg-base-100 shadow-lg rounded-lg md:p-6 h-full flex flex-col justify-between"
                 >
-                    <p className='italic text-3xl font-bold text-center mb-6'>Who Are We?</p>
+                    <p className='italic text-xl md:text-3xl font-bold text-center mb-6'>Who Are We?</p>
                     <div className="join join-vertical">
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="who" defaultChecked />
@@ -35,21 +37,19 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='text-center mt-4'>
+                    <div className='text-center my-4 md:my-6'>
                         <Link to='/contact'>
                             <button className='btn btn-info'>Contact</button>
                         </Link>
                     </div>
                 </div>
 
-                <div className="flex items-center justify-center">
-                    <div className=''>
-                        <Lottie className='hidden md:block w-[500px]' animationData={img} loop={true} />
-                    </div>
+                <div className="hidden lg:flex items-center justify-centerF w-[400px]">
+                    <Lottie className='' animationData={img} loop={true} />
                 </div>
 
                 <div className="bg-base-100 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between">
-                    <p className='italic text-3xl font-bold text-center mb-6'>What's Special?</p>
+                    <p className='italic text-xl md:text-3xl font-bold text-center mb-6'>What's Special?</p>
                     <div className="join join-vertical">
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="special" defaultChecked />

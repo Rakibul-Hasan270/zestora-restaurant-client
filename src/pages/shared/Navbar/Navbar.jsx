@@ -18,7 +18,7 @@ const Navbar = () => {
     </div>
 
     return (
-        <div className="max-w-6xl mx-auto navbar bg-base-100 shadow-sm">
+        <div className="max-w-6xl mx-auto navbar bg-base-100 shadow-sm md:flex md:justify-center md:items-center">
             <div className="navbar-start flex items-center">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,10 +56,10 @@ const Navbar = () => {
                             </a>
                         </li>
 
-                        {user?.role === 'admin' ?
+                       
                             < li > <Link className="hover:bg-cyan-700" to='/dashboard/manageMenuItem'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link></li>
-                            : < li > <Link className="hover:bg-cyan-700" to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link></li>
-                        }
+                           
+                       
                         <li onClick={() => logOut()}><a className="hover:bg-cyan-700"><BiLogOutCircle></BiLogOutCircle> Logout</a></li>
                     </ul>
                 </div>

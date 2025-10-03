@@ -1,13 +1,13 @@
 const Slider = ({ info }) => {
     return (
         <header>
-            <div className="w-full bg-center bg-cover h-[38rem]" style={{
+            <div className="w-full bg-center bg-cover h-[23rem] md:h-[38rem]" style={{
                 backgroundImage: `linear-gradient(to right, #151515, rgba(21, 21, 21, 0)), url('${info.imageUrl}')`
             }}>
                 <div className="flex items-center justify-center w-full h-full bg-gray-900/20">
                     <div className="text-center">
-                        <p className="text-6xl font-bold text-center">Zest<span className="text-cyan-500">Ora</span></p>
-                        <h1 className="text-3xl font-semibold text-white lg:text-4xl mt-4 mb-4">
+                        <p className="text-4xl md:text-6xl font-bold text-center">Zest<span className="text-cyan-500">Ora</span></p>
+                        <h1 className="text-xl md:text-3xl font-semibold text-white lg:text-4xl mt-4 mb-4">
                             {info.title}
                         </h1>
                         {

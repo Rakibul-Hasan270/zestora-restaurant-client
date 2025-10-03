@@ -37,26 +37,27 @@ const Carousel = () => {
     ];
 
     return (
-        <><Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-            pagination={{
-                clickable: true,
-            }}
-            navigation={true}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper"
-        >
-            {
-                bannerData.map((info, idx) => <SwiperSlide key={idx}><Slider info={info}></Slider></SwiperSlide>)
-            }
-        </Swiper>
-        </>
+        <div>
+            <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                {
+                    bannerData.map((info, idx) => <SwiperSlide key={idx}><Slider info={info}></Slider></SwiperSlide>)
+                }
+            </Swiper>
+        </div>
     );
 };
 

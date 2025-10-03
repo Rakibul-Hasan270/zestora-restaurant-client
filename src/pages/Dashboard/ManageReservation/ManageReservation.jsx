@@ -73,7 +73,7 @@ const ManageReservation = () => {
         <div>
             <SectionHeading heading='Reservation' subHeading='Review pending requests and keep bookings organized'></SectionHeading>
             <div className="mb-10">
-                <p className="text-3xl font-semibold text-cyan-500 text-center">All Reservation: {reservation.length}</p>
+                <p className="text-xl md:text-3xl font-semibold text-cyan-500 text-center">All Reservation: {reservation.length}</p>
             </div>
             <section className="container px-4 mx-auto">
                 <div className="flex flex-col">

@@ -61,7 +61,7 @@ const Menu = () => {
 
     if (isLoading) return <p className="text-center text-2xl font-serif text-cyan-500 mt-16 mb-10">Loading...</p>
     return (
-        <div className="max-w-6xl mx-auto md:mt-12">
+        <div className="max-w-6xl mx-auto mt-10 md:mt-12">
             <div>
                 <div className="text-center">
                     <p className="flex items-center justify-center gap-2 md:w-xl mb-3 mx-auto font-bold text-cyan-500"><FiSearch></FiSearch>Find your favourte Food.</p>
@@ -75,7 +75,7 @@ const Menu = () => {
                         Delight in handcrafted burgers, artisan pizzas, fresh salads, and decadent desserts. Enjoy signature pastas, chef’s specials, and refreshing beverages, all made with quality and creativity.
                     </p>
                 </div>
-                <div className="md:w-5/6 mx-auto my-12 flex gap-7 mb-28">
+                <div className="md:w-5/6 mx-auto my-12 flex gap-7 md:mb-28">
                     <Marquee>
                         {
                             menuUs.map(menu => <button key={menu._id} className="border rounded-2xl py-2 px-6 font-semibold cursor-pointer border-cyan-500 mr-8">{menu.category}</button>)
@@ -86,8 +86,8 @@ const Menu = () => {
 
             <SectionHeading heading='Our Delicious Menu' subHeading='Explore a variety of freshly prepared dishes made with love and quality ingredients. From starters to desserts, every bite brings you the perfect taste of happiness.'></SectionHeading>
 
-            <div className='md:flex gap-2 md:gap-0 justify-around items-center mb-6'>
-                <div className="flex flex-col gap-3">
+            <div className='md:flex justify-around space-y-3.5 mb-2.5 md:mb-6'>
+                <div className="flex flex-col gap-3 text-cyan-300">
                     <select onChange={e => {
                         setFilter(e.target.value)
                         setCurrentPage(1)
@@ -133,12 +133,12 @@ const Menu = () => {
                             name="search"
                             type="search"
                             id="default-search"
-                            className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-cyan-500 focus:border-cyan-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500"
                             placeholder="Search Mockups, Logos..." required
                         />
                         <button
                             type="submit"
-                            className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            className="text-white absolute end-2.5 bottom-2.5 bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
                         >
                             Search
                         </button>
@@ -146,7 +146,7 @@ const Menu = () => {
                 </form>
 
 
-                <div>
+                <div className="text-cyan-300">
                     <div className="flex flex-col gap-3">
                         <select onChange={e => {
                             setSort(e.target.value)
@@ -178,7 +178,7 @@ const Menu = () => {
                     {
                         pages.map((page) =>
                             <button key={page} onClick={() => handelPaginationBnt(page)}
-                                className={`items-center ${currentPage === page ? 'bg-blue-500 text-white' : 'bg-white text-gray-700 dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-600 hover:text-white'} hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:flex `}>{page}
+                                className={`items-center ${currentPage === page ? 'bg-cyan-500 text-white' : 'bg-white text-gray-700 dark:bg-gray-800 dark:text-gray-200 hover:bg-cyan-600 hover:text-white'} hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:flex `}>{page}
                             </button>)
                     }
                     <button onClick={() => handelPaginationBnt(currentPage + 1)} disabled={currentPage === numberOfPages} className='btn btn-outline'>

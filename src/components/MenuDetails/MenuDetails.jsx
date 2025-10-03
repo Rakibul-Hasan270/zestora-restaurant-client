@@ -26,7 +26,7 @@ const MenuDetails = () => {
         <>
             <SectionHeading heading='Sip, Refresh & Relax' subHeading='Energize your morning with our wholesome breakfast options — from fluffy pancakes to protein-packed omelettes, freshly baked bread, and aromatic coffee.'></SectionHeading>
 
-            <div className="max-w-6xl mx-auto my-12 px-4">
+            <div className="max-w-6xl mx-auto my-12 md:px-4">
                 <div className="grid md:grid-cols-2 gap-8 bg-white/80 dark:bg-gray-900/90 border border-cyan-200 dark:border-cyan-700 rounded-2xl shadow-2xl backdrop-blur-md overflow-hidden">
 
                     <div className="relative">
@@ -42,7 +42,7 @@ const MenuDetails = () => {
 
                     <div className="flex flex-col justify-between px-8 py-6">
                         <div>
-                            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
+                            <h1 className="text-xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
                                 {name}
                             </h1>
 
@@ -59,11 +59,11 @@ const MenuDetails = () => {
                         </div>
 
                         <div className="flex items-center justify-between pt-6 border-t border-gray-200 dark:border-gray-700">
-                            <span className="text-4xl font-extrabold text-cyan-700 dark:text-cyan-400">
+                            <span className="text-xl md:text-4xl font-extrabold text-cyan-700 dark:text-cyan-400">
                                 ${price}
                             </span>
 
-                            <button onClick={handelAddToCard} className="bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 text-white font-semibold rounded-xl text-sm px-8 py-3 shadow-lg transform transition duration-300 hover:scale-105">
+                            <button onClick={handelAddToCard} className="bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 text-white font-semibold rounded-xl text-sm px-2 md:px-8 py-1 md:py-3 shadow-lg transform transition duration-300 hover:scale-105">
                                 Add to cart
                             </button>
                         </div>

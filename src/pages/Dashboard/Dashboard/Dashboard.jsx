@@ -22,7 +22,7 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin();
 
     return (
-        <div className="max-w-6xl mx-auto md:flex gap-6">
+        <div className="max-w-6xl mx-auto md:flex md:gap-6 p-2">
             <div className="md:w-80 bg-cyan-900 min-h-screen text-white list-none p-5 space-y-2">
                 <div>
                     <div className="text-center text-3xl font-bold mb-12 text-cyan-300">

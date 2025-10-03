@@ -74,9 +74,9 @@ const ManageUser = () => {
         <div>
             <SectionHeading heading='Manage Your People' subHeading='Empower admins, organize members, and streamline access'></SectionHeading>
 
-            <div className="flex justify-around mb-8">
-                <p className="text-3xl text-cyan-500 font-semibold">Total Admin: {users.filter(user => user.role === 'admin').length}</p>
-                <p className="text-3xl text-cyan-500 font-semibold">Total User: {users.filter(user => user.role !== 'admin').length}</p>
+            <div className="md:flex justify-around mb-8">
+                <p className="text-xl text-center md:text-3xl text-cyan-500 font-semibold">Total Admin: {users.filter(user => user.role === 'admin').length}</p>
+                <p className="text-xl text-center md:text-3xl text-cyan-500 font-semibold">Total User: {users.filter(user => user.role !== 'admin').length}</p>
             </div>
 
             <div className="overflow-x-auto">

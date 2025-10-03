@@ -39,10 +39,7 @@ const CallToAction = () => {
 
     return (
         <div className="md:mt-28">
-            <SectionHeading
-                heading='Reserve Your Table Today'
-                subHeading='Avoid the wait — book your table now and enjoy a seamless dining experience with your friends and family.'
-            />
+            <SectionHeading heading='Reserve Your Table Today'subHeading='Avoid the wait — book your table now and enjoy a seamless dining experience with your friends and family.'/>
 
             <section>
                 <div className="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
@@ -55,7 +52,7 @@ const CallToAction = () => {
                     </div>
 
                     <div className="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0">
-                        <form onSubmit={handleSubmit(onSubmit)} className="mx-auto w-2/3">
+                        <form onSubmit={handleSubmit(onSubmit)} className="mx-auto w-full">
 
                             {/* for name  */}
                             <div className="relative z-0 w-full mb-5 group">

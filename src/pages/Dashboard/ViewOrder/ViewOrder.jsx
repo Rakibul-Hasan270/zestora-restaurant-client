@@ -10,7 +10,7 @@ const ViewOrder = () => {
             <SectionHeading heading='Manage Order' subHeading='Stay on top of customer requests — confirm, cancel or complete orders easily.'></SectionHeading>
 
             <div className="mb-8">
-                <p className="text-3xl text-center text-cyan-500 font-semibold">Total Order: {order.length}</p>
+                <p className="text-xl md:text-3xl text-center text-cyan-500 font-semibold">Total Order: {order.length}</p>
             </div>
             <p>Order page is ready. Firsly finish payment page then order. cause payment history notification come, then confirm, cansel or finish order_</p>
         </div>

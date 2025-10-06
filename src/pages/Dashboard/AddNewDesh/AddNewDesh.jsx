@@ -3,6 +3,7 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
+import { useNavigate } from "react-router-dom";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -11,6 +12,7 @@ const AddNewDesh = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
 
     const onSubmit = async (data) => {
         const imageFile = { image: data.image[0] };
@@ -32,6 +34,7 @@ const AddNewDesh = () => {
             if (resPostData.data.insertedId) {
                 toast.success(`${data.name} added to menu cart`);
                 // todo: must added navigate 
+                navigate('/dashboard/manageMenuItem');
             }
         }
     }

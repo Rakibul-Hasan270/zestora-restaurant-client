@@ -10,7 +10,7 @@ const useManageReservation = () => {
         queryKey: ['reservation', user?.email],
         queryFn: async () => {
             try {
-                const resReserv = await axiosSecure.get('/reservation');
+            const resReserv = await axiosSecure.get('/reservation');
                 return resReserv.data;
             } catch (err) {
                 console.log(err);

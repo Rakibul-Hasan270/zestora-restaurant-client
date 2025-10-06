@@ -74,8 +74,8 @@ const AboutUs = () => {
                         </div>
                     </div>
                     <div className='text-center mt-4'>
-                        <Link to='/gallery'>
-                            <button className='btn btn-info'>Gallery</button>
+                        <Link to='/reservation'>
+                            <button className='btn btn-info'>Reservation</button>
                         </Link>
                     </div>
                 </div>

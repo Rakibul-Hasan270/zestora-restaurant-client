@@ -23,7 +23,7 @@ const Dashboard = () => {
 
     return (
         <div className="max-w-6xl mx-auto md:flex md:gap-6 p-2">
-            <div className="md:w-80 bg-cyan-900 min-h-screen text-white list-none p-5 space-y-2">
+            <div className="md:w-80 bg-cyan-900 md:min-h-screen text-white list-none p-5 space-y-2">
                 <div>
                     <div className="text-center text-3xl font-bold mb-12 text-cyan-300">
                         <Link to='/'>
@@ -79,7 +79,7 @@ const Dashboard = () => {
                                 <NavLink className={({ isActive }) =>
                                     `flex items-center gap-[7px] px-3 py-2 rounded-md transition 
                             ${isActive ? "bg-cyan-600 font-semibold" : "hover:bg-cyan-500"}`
-                                } to='/dashboard/userReservation'><span className="flex items-center gap-[7px]"><RiPresentationFill></RiPresentationFill>Reserv Table({reservation.length})</span></NavLink>
+                                } to='/dashboard/userReservation'><span className="flex items-center gap-[7px]"><RiPresentationFill></RiPresentationFill>Reserv Table</span></NavLink>
                             </>}
                 </div>
                 <div className="divider divider-accent">zestora</div>

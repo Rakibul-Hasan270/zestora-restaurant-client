@@ -4,17 +4,19 @@ import useAuth from "../../../hooks/useAuth";
 import { MdDashboardCustomize } from "react-icons/md";
 import { BiLogOutCircle } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
+import useAdmin from "../../../hooks/useAdmin";
 
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
+    const [isAdmin] = useAdmin();
 
     const links = <div className='md:flex justify-end items-center'>
         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Home</NavLink></li>
         <li><NavLink to="/menu" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Menu</NavLink></li>
         <li><NavLink to="/reservation" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Reservation</NavLink></li>
         <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Contact</NavLink></li>
-        <li><NavLink to="/signIn" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Sign In</NavLink></li>
+        {user ? '' : <li><NavLink to="/signIn" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Sign In</NavLink></li>}
     </div>
 
     return (
@@ -51,12 +53,17 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li>
-                            <a className="hover:bg-cyan-700">
+                            <button disabled={true} className="hover:bg-cyan-700">
                                 <CgProfile></CgProfile> Profile
-                            </a>
+                            </button>
                         </li>
                         < li >
-                            <Link className="hover:bg-cyan-700" to='/dashboard'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link>
+                            {
+                                user ?
+                                    isAdmin ? <Link className="hover:bg-cyan-700" to='/dashboard/manageMenuItem'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link> : <Link className="hover:bg-cyan-700" to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link>
+                                    :
+                                    ''
+                            }
                         </li>
                         <li onClick={() => logOut()}><a className="hover:bg-cyan-700"><BiLogOutCircle></BiLogOutCircle> Logout</a></li>
                     </ul>

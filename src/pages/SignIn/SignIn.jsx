@@ -39,8 +39,6 @@ const SignIn = () => {
         }
     }
 
-    console.log(location.state?.from?.pathname);
-
     return (
         <section className="mt-12 mb-10">
             <div className="container flex flex-col items-center justify-center md:h-[600px] px-2 mx-auto md:max-w-2xl bg-white dark:bg-gray-900 rounded-2xl">

@@ -1,13 +1,23 @@
 import { FaTrashAlt } from "react-icons/fa";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
-import useManageReservation from "../../../hooks/useManageReservation";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { useQuery } from "@tanstack/react-query";
+import useAuth from "../../../hooks/useAuth";
 
 const UserReservation = () => {
-    const [reservation, refetch, isLoading] = useManageReservation();
     const axiosSecure = useAxiosSecure();
+    const { user } = useAuth();
+
+    const { data: reserv = [], refetch, isLoading } = useQuery({
+        queryKey: ['userSpecificReserv', user?.email],
+        queryFn: async () => {
+            const resReserv = await axiosSecure.get(`/reservation/${user.email}`);
+            console.log(resReserv.data);
+            return resReserv.data;
+        }
+    })
 
     const handelDeleteReservation = reserv => {
         Swal.fire({
@@ -43,7 +53,7 @@ const UserReservation = () => {
         <div>
             <SectionHeading heading='Your Reservation' subHeading='Manage your bookings and stay updated with your reservations.'></SectionHeading>
             <div className="flex justify-around mb-10">
-                <p className="text-3xl font-semibold text-cyan-500 text-center">Total Reservation: {reservation.length}</p>
+                <p className="text-3xl font-semibold text-cyan-500 text-center">Total Reservation: {reserv.length}</p>
             </div>
             <div>
                 <div className="overflow-x-auto">
@@ -60,7 +70,7 @@ const UserReservation = () => {
                         </thead>
                         <tbody>
                             {
-                                reservation.map((reserv, idx) => <tr key={idx}>
+                                reserv.map((reserv, idx) => <tr key={idx}>
                                     <th>{idx + 1}</th>
                                     <td>
                                         <div className="flex items-center gap-3">

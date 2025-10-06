@@ -5,7 +5,7 @@ const MenuCard = ({ menu }) => {
     const { category, description, image, name, price, rating, _id } = menu;
 
     return (
-        <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+        <div className="w-full overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
             <img className="object-cover object-center w-full h-56 transition-transform duration-300 ease-in-out hover:scale-110" src={image} alt="avatar" />
 
             <div className="flex items-center px-6 py-3 bg-gray-900">

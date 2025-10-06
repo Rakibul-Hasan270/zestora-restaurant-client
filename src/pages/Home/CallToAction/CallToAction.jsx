@@ -33,13 +33,15 @@ const CallToAction = () => {
             if (resPostData.data.insertedId) {
                 toast.success(`Mr. ${data.name}, your reservation has been confirmed!`);
                 reset();
+            } else {
+                toast.error(errors.message);
             }
         }
     }
 
     return (
         <div className="md:mt-28">
-            <SectionHeading heading='Reserve Your Table Today'subHeading='Avoid the wait — book your table now and enjoy a seamless dining experience with your friends and family.'/>
+            <SectionHeading heading='Reserve Your Table Today' subHeading='Avoid the wait — book your table now and enjoy a seamless dining experience with your friends and family.' />
 
             <section>
                 <div className="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">

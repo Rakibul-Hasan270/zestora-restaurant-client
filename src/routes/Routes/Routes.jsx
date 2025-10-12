@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
             {
                 path: '/menuDetails/:id',
                 element: <PrivateRoutes><MenuDetails></MenuDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:9000/menu/${params.id}`)
+                loader: ({ params }) => fetch(`https://zestora-restaurant-server.vercel.app/menu/${params.id}`)
             },
             {
                 path: 'contact',
@@ -69,7 +69,7 @@ export const router = createBrowserRouter([
             {
                 path: 'updateMenuItem/:id',
                 element: <AdminRoutes><UpdateMenuItem></UpdateMenuItem></AdminRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:9000/menu/${params.id}`)
+                loader: ({ params }) => fetch(`https://zestora-restaurant-server.vercel.app/menu/${params.id}`)
             },
             {
                 path: 'addDesh',

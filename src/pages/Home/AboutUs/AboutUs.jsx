@@ -7,7 +7,7 @@ import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 const AboutUs = () => {
     return (
         <div className="md:max-w-[1400px] bg-base-100 md:mb-28 mt-16 md:mt-28 md:mx-auto">
-        <SectionHeading heading='About Us' subHeading='Get to know us'></SectionHeading>            
+        <SectionHeading heading='About Us' subHeading='Get to know Us'></SectionHeading>            
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 md:p-5 items-stretch">
 

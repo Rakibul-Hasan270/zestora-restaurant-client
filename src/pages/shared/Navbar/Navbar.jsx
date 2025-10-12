@@ -52,11 +52,6 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li>
-                            <button disabled={true} className="hover:bg-cyan-700">
-                                <CgProfile></CgProfile> Profile
-                            </button>
-                        </li>
                         < li >
                             {
                                 user ?
@@ -65,7 +60,9 @@ const Navbar = () => {
                                     ''
                             }
                         </li>
-                        <li onClick={() => logOut()}><a className="hover:bg-cyan-700"><BiLogOutCircle></BiLogOutCircle> Logout</a></li>
+                        {
+                            user ? <li onClick={() => logOut()}><a className="hover:bg-cyan-700"><BiLogOutCircle></BiLogOutCircle> Logout</a></li> : ''
+                        }
                     </ul>
                 </div>
             </div>

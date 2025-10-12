@@ -98,7 +98,7 @@ const Menu = () => {
                         <option value="Main Course">Main Course</option>
                         <option value="Desserts">Desserts</option>
                         <option value="Beverages">Beverages</option>
-                        <option value="Chef’s Specials">Chef’s Specials</option>
+                        <option value="	Chef's Specials">	Chef's Specials</option>
                     </select>
                 </div>
 

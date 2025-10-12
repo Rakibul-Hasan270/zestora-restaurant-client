@@ -1,20 +1,14 @@
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 const Contact = () => {
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
+            <SectionHeading heading=' Let’s talk' subHeading='Ask us everything and we would love to hear from you'></SectionHeading>
             <section className="min-h-screen ">
                 <div className="container px-6 py-10 mx-auto">
                     <div className="lg:flex lg:items-center lg:-mx-10">
                         {/* Left Form Section */}
                         <div className="lg:w-1/2 lg:mx-10">
-                            <h1 className="text-2xl font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
-                                Let’s talk
-                            </h1>
-
-                            <p className="mt-4 text-gray-500 dark:text-gray-400">
-                                Ask us everything and we would love to hear from you
-                            </p>
-
                             <form className="mt-12">
                                 <div className="-mx-2 md:items-center md:flex">
                                     <div className="flex-1 px-2">
@@ -61,11 +55,11 @@ const Contact = () => {
 
                         {/* Right Image & Contact Section */}
                         <div className="mt-12 lg:flex lg:mt-0 lg:flex-col lg:items-center lg:w-1/2 lg:mx-10">
-                            <img
+                            {/* <img
                                 className="hidden object-cover mx-auto rounded-full lg:block shrink-0 w-96 h-96"
                                 src="https://images.unsplash.com/photo-1598257006458-087169a1f08d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                                 alt=""
-                            />
+                            /> */}
 
                             <div className="mt-6 space-y-8 md:mt-8">
                                 <p className="flex items-start -mx-2">

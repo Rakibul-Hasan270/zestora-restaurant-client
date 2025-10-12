@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Slider = ({ info }) => {
     return (
         <header>
@@ -11,7 +13,7 @@ const Slider = ({ info }) => {
                             {info.title}
                         </h1>
                         {
-                            info.buttonText.map((btn, idx) => <button className="px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-cyan-600 rounded-md lg:w-auto hover:bg-cyan-700 focus:outline-none focus:bg-cyan-700 mr-4" key={idx}>{btn}</button>)
+                            info.buttonText.map((btn, idx) => <Link to='/' className="px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-cyan-600 rounded-md lg:w-auto hover:bg-cyan-700 focus:outline-none focus:bg-cyan-700 mr-4" key={idx}>{btn}</Link>)
                         }
                     </div>
                 </div>

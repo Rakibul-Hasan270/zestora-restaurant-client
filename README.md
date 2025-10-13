@@ -3,9 +3,9 @@
 ### Project Overview
 A modern, responsive restaurant platform featuring seamless table reservations, online ordering, smart search with filters & sorting, smooth pagination, and a powerful admin dashboard for full control.
 
-Live link:
-Admin username: 
-Admin password:
+Live link: 
+Admin username:  
+Admin password: 
 
 
 ### Key Features
@@ -30,20 +30,9 @@ Admin password:
 ### Run Locally
 
 1. **Clone the Repository**
-```bash
-git clone https://github.com/your-username/your-frontend-repo.git
-
-2.```bash
-cd your-frontend-repo
-
-3. ```bash
-npm install
-
-4.```bash
-npm run dev
-
-5.```bash
-npm run build
-
-5.```bash
-npm run preview
+```  
+https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
+https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
+https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
+https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
+```

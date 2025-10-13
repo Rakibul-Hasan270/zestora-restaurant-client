@@ -3,9 +3,9 @@
 ### Project Overview
 A modern, responsive restaurant platform featuring seamless table reservations, online ordering, smart search with filters & sorting, smooth pagination, and a powerful admin dashboard for full control.
 
-**Live Demo:** (https://employee-management-a45e0.web.app)  
-**Admin username:** rakib@gmail.com  
-**Admin password:** !1234Aa
+**Live Demo:** https://employee-management-a45e0.web.app  
+**Admin username:**  rakib@gmail.com  
+**Admin password:**  !1234Aa
 
 
 ### Key Features

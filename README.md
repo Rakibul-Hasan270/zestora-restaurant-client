@@ -10,11 +10,11 @@ A modern, responsive restaurant platform featuring seamless table reservations, 
 
 ### Key Features
 
-- Table reservation & online food ordering for a seamless user experience.  
-- Advanced search, filter, sort, reset, and smooth pagination for easy menu browsing.  
-- Admin dashboard to manage menu, orders, reservations, and users efficiently.  
-- User dashboard for viewing and managing personal orders and reservations.  
-- Fully responsive design, optimized for mobile, tablet, and desktop devices.
+- Table reservation and online food ordering for a smooth and hassle-free user journey.  
+- Advanced search, filter, sort, reset options, and smooth pagination for easy browsing of menu items.  
+- Efficiently manage menu items, orders, reservations, and users from a single interface.  
+- View and manage your personal orders and reservations with ease.  
+- Optimized for mobile, tablet, and desktop devices for the best user experience across all screens.
 
 
 ### Technologies

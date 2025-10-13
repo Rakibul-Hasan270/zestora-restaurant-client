@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import useAuth from "../../../hooks/useAuth";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -12,6 +13,7 @@ const CallToAction = () => {
     const axiosPublic = useAxiosPublic();
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [loading, setLoading] = useState(false);
+    const { user } = useAuth();
 
     const onSubmit = async (data) => {
         setLoading(true);
@@ -34,7 +36,7 @@ const CallToAction = () => {
             }
             const resPostData = await axiosPublic.post('/reservation', userInfo);
             if (resPostData.data.insertedId) {
-                toast.success(`Mr. ${data.name}, your reservation has been confirmed!`);
+                toast.success(`Mr. ${data.name}, your reservation has been processing..`);
                 reset();
                 setLoading(false);
             } else {
@@ -82,6 +84,7 @@ const CallToAction = () => {
                             {/* for email  */}
                             <div className="relative z-0 w-full mb-5 group">
                                 <input
+                                    defaultValue={user?.email}
                                     {...register('email', { required: true })}
                                     type="email"
                                     name="email"

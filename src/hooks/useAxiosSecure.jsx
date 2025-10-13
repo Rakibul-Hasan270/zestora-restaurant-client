@@ -3,7 +3,7 @@ import useAuth from "./useAuth";
 import { useNavigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
-    baseURL: 'https://zestora-restaurant-server.vercel.app'
+    baseURL: 'http://localhost:9000'
 })
 
 const useAxiosSecure = () => {

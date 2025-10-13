@@ -3,7 +3,6 @@ import logo from '../../../assets/Logo/logo.png';
 import useAuth from "../../../hooks/useAuth";
 import { MdDashboardCustomize } from "react-icons/md";
 import { BiLogOutCircle } from "react-icons/bi";
-import { CgProfile } from "react-icons/cg";
 import useAdmin from "../../../hooks/useAdmin";
 
 

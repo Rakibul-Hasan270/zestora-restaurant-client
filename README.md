@@ -3,7 +3,7 @@
 ### Project Overview
 A modern, responsive restaurant platform featuring seamless table reservations, online ordering, smart search with filters & sorting, smooth pagination, and a powerful admin dashboard for full control.
 
-**Live Demo:** https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new  
+**Live Demo:** https://zestora-restaurant-new.web.app  
 **Admin username:**  rakib@gmail.com  
 **Admin password:**  !1234Aa
 

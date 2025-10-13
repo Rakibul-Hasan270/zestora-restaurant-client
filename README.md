@@ -27,14 +27,30 @@ Admin password:
 - Firebase
 - JWT
 
+
 ### Run Locally
 
 1. **Clone the Repository**
 ```  
-https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
+git clone https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
 ```
-
-2. **clone the repo**
+2. **Navigate to the Project Directory**
 ``` 
-https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
+cd your-repository
+```
+3. **Install Dependencies**
+```  
+npm install
+```
+4. **Start the Development Server**
+```  
+npm run dev
+```
+5. **Build the Project for Production**
+```  
+npm run build
+```
+6.**Preview the Production Build**
+```  
+npm run preview
 ```

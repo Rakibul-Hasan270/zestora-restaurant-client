@@ -27,12 +27,23 @@ Admin password:
 - Firebase
 - JWT
 
+### Run Locally
 
-## Run Locally
-
-1️. **Clone the Repository**
+1. **Clone the Repository**
 ```bash
 git clone https://github.com/your-username/your-frontend-repo.git
 
-2.**Navigate to the Project Directory**
+2.```bash
 cd your-frontend-repo
+
+3. ```bash
+npm install
+
+4.```bash
+npm run dev
+
+5.```bash
+npm run build
+
+5.```bash
+npm run preview

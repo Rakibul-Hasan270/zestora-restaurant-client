@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 
 const SignIn = () => {
@@ -23,6 +24,7 @@ const SignIn = () => {
             navigate(from, { replace: true });
         } catch (err) {
             console.log(err);
+            toast.error(err?.message);
         } finally {
             setLoading(false);
         }

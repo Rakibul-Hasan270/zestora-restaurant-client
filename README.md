@@ -32,7 +32,9 @@ Admin password:
 1. **Clone the Repository**
 ```  
 https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
-https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
-https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
+```
+
+2. **clone the repo**
+``` 
 https://github.com/Rakibul-Hasan270/zestora-restaurant-client-new
 ```

@@ -11,11 +11,15 @@ const Navbar = () => {
     const [isAdmin] = useAdmin();
 
     const links = <div className='md:flex justify-end items-center'>
-        <li><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Home</NavLink></li>
-        <li><NavLink to="/menu" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Menu</NavLink></li>
-        <li><NavLink to="/reservation" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Reservation</NavLink></li>
-        <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Contact</NavLink></li>
-        {user ? '' : <li><NavLink to="/signIn" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Sign In</NavLink></li>}
+        <li className="text-[18px]"><NavLink to="/" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Home</NavLink></li>
+
+        <li className="text-[18px]"><NavLink to="/menu" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Menu</NavLink></li>
+
+        <li className="text-[18px]"><NavLink to="/reservation" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Reservation</NavLink></li>
+
+        {/* <li className="text-[18px]"><NavLink to="/contact" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Contact</NavLink></li> */}
+
+        {user ? '' : <li className="text-[18px]"><NavLink to="/signIn" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Sign In</NavLink></li>}
     </div>
 
     return (
@@ -51,16 +55,16 @@ const Navbar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        < li >
+                        <li>
                             {
                                 user ?
-                                    isAdmin ? <Link className="hover:bg-cyan-700" to='/dashboard/manageMenuItem'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link> : <Link className="hover:bg-cyan-700" to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link>
+                                    isAdmin ? <Link className="hover:bg-cyan-700 text-[16px]" to='/dashboard/manageMenuItem'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link> : <Link className="hover:bg-cyan-700" to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link>
                                     :
                                     ''
                             }
                         </li>
                         {
-                            user ? <li onClick={() => logOut()}><a className="hover:bg-cyan-700"><BiLogOutCircle></BiLogOutCircle> Logout</a></li> : ''
+                            user ? <li onClick={() => logOut()}><a className="hover:bg-cyan-700 text-[16px]"><BiLogOutCircle></BiLogOutCircle> Logout</a></li> : ''
                         }
                     </ul>
                 </div>

@@ -15,12 +15,12 @@ const PopularMenu = () => {
     }, [])
 
     return (
-        <div className="md:mt-28">
+        <div className="mt-20 md:mt-28">
             <SectionHeading heading='Our Popular Menu' subHeading='Handpicked favorites loved by our customers – fresh, delicious, and unforgettable.'></SectionHeading>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {
-                    menu.map((menu, idx) =>
+                    menu.slice(0, 10).map((menu, idx) =>
                         <Link to='/menu' key={idx} className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <img
                                 className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-36 md:rounded-none md:rounded-s-lg"

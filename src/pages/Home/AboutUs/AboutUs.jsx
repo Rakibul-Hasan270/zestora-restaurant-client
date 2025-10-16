@@ -6,8 +6,8 @@ import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 
 const AboutUs = () => {
     return (
-        <div className="md:max-w-[1400px] bg-base-100 md:mb-28 mt-16 md:mt-28 md:mx-auto">
-        <SectionHeading heading='About Us' subHeading='Get to know Us'></SectionHeading>            
+        <div className="md:max-w-[1400px] bg-base-100 md:mb-28 mt-28 md:mt-28 md:mx-auto">
+            <SectionHeading heading='About Us' subHeading='Get to know Us'></SectionHeading>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 md:p-5 items-stretch">
 
@@ -48,7 +48,7 @@ const AboutUs = () => {
                     <Lottie className='' animationData={img} loop={true} />
                 </div>
 
-                <div className="bg-base-100 shadow-lg rounded-lg p-6 h-full flex flex-col justify-between">
+                <div className="bg-base-100 shadow-lg rounded-lg h-full flex flex-col justify-between">
                     <p className='italic text-xl md:text-3xl font-bold text-center mb-6'>What's Special?</p>
                     <div className="join join-vertical">
                         <div className="collapse collapse-arrow join-item border border-base-300">

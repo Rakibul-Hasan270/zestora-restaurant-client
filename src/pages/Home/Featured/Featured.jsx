@@ -4,13 +4,13 @@ import SectionHeading from '../../../components/SectionHeading/SectionHeading';
 
 const Featured = () => {
     return (
-        <div className='md:mt-32'>
+        <div className='mt-20 md:mt-32'>
             <SectionHeading heading='Why Choose Us' subHeading='Everything you need to get started quickly and also fresh Food.'></SectionHeading>
             <section
                 style={{ backgroundImage: `linear-gradient(to right, #151515, rgba(21, 21, 21, 0)), url('${fetared}')` }}
                 className="bg-cover bg-center md:h-[600px] w-full"
             >
-                <div className="container px-6 py-10 mx-auto">
+                <div className="max-w-6xl px-6 py-10 mx-auto">
 
 
                     <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-28 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">

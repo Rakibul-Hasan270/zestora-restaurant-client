@@ -6,7 +6,7 @@ const Reservation = () => {
 
     return (
         <div className="md:space-y-28">
-            <Cover img={img} title='Reserve Your Table' description="Reserve your table for a smooth, stress-free dining experience. Enjoy every moment, whether it's family, friends, or a romantic evening."></Cover>
+            <Cover img={img} title='Reserve Your Table' description="Reserve your table for a smooth, stress-free dining experience."></Cover>
 
             <CallToAction></CallToAction>
         </div>

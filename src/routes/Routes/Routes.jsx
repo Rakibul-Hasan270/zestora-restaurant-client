@@ -3,7 +3,7 @@ import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home/Home";
 import Menu from "../../pages/Menu/Menu";
 import Reservation from "../../pages/Reservation/Reservation";
-import Contact from "../../pages/Contact/Contact";
+// import Contact from "../../pages/Contact/Contact";
 import SignIn from "../../pages/SignIn/SignIn";
 import SignUp from "../../pages/SignUp/SignUp";
 import MenuDetails from "../../components/MenuDetails/MenuDetails";
@@ -42,10 +42,10 @@ export const router = createBrowserRouter([
                 element: <PrivateRoutes><MenuDetails></MenuDetails></PrivateRoutes>,
                 loader: ({ params }) => fetch(`https://zestora-restaurant-server.vercel.app/menu/${params.id}`)
             },
-            {
-                path: 'contact',
-                element: <Contact></Contact>
-            },
+            // {
+            //     path: 'contact',
+            //     element: <Contact></Contact>
+            // },
             {
                 path: 'signIn',
                 element: <SignIn></SignIn>

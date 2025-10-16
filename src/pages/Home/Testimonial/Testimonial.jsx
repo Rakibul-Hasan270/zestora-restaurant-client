@@ -22,7 +22,7 @@ const Testimonial = () => {
     if (isLoading) return <p className="text-center text-2xl font-serif text-cyan-500 mt-16 mb-10">Loading...</p>
 
     return (
-        <div>
+        <div className="mt-28">
             <SectionHeading heading='Testimonials' subHeading='Our customers are extremely satisfied with our service. They experienced fast, accurate, and friendly support. Each experience demonstrates the quality of our product and builds trustworthiness.'></SectionHeading>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 {
@@ -34,7 +34,21 @@ const Testimonial = () => {
 
                                     <div className="w-full p-6 bg-cyan-600 md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
                                         <img
-                                            className="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
+                                            className="h-24 w-24 
+                                            
+                                            
+                                            
+                                            
+                                            https://i.ibb.co.com/chRRYmpD/pexels-tima-miroshnichenko-9572419.jpg
+https://i.ibb.co.com/dsyLt9TR/pexels-emrekeshavarz-3649240.jpg
+https://i.ibb.co.com/WWCbHtcx/pexels-mart-production-8872392.jpg
+https://i.ibb.co.com/JRc22Mr0/pexels-koolshooters-6980546.jpg
+https://i.ibb.co.com/3YMs42xF/pexels-suzyhazelwood-3091193.jpg
+https://i.ibb.co.com/YTLt1pDF/pexels-mikechie-esparagoza-749296-1660613.jpg
+https://i.ibb.co.com/CFWQjKy/pexels-koolshooters-6980696.jpg
+https://i.ibb.co.com/84L51wH6/pexels-cristian-rojas-7260644.jpg
+https://i.ibb.co.com/LX61Gn57/pexels-anh-nguyen-517648218-27045934.jpg
+https://i.ibb.co.com/BKqCsqkD/woman-reading-book-table.jpgmd:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
                                             src={review.image}
                                             alt="client photo"
                                         />

@@ -9,12 +9,12 @@ const Cover = ({ img, title, description }) => {
             bgImageAlt="the reservation"
             strength={-200}
         >
-            <div className="hero md:h-[800px]">
+            <div className="hero h-[300px] md:h-[750px]">
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
-                    <div className="w-11/12">
+                    <div className="">
                         <h1 className="mb-5 text-2xl md:text-5xl font-bold uppercase">{title}</h1>
-                        <p className="mb-5 md:w-10/12 mx-auto">{description}</p>
+                        <p className="mb-5 mx-auto">{description}</p>
                     </div>
                 </div>
             </div>

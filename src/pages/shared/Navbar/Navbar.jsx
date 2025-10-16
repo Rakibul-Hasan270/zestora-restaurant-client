@@ -18,8 +18,6 @@ const Navbar = () => {
         <li className="text-[18px]"><NavLink to="/reservation" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Reservation</NavLink></li>
 
         {/* <li className="text-[18px]"><NavLink to="/contact" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Contact</NavLink></li> */}
-
-        {user ? '' : <li className="text-[18px]"><NavLink to="/signIn" className={({ isActive }) => isActive ? "text-cyan-400 font-bold underline" : "text-cyan-500"}>Sign In</NavLink></li>}
     </div>
 
     return (
@@ -42,7 +40,9 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end mr-4 md:w-[100px]">
+
+            {/* if the user exists, show profile. if not, show signIn page  */}
+            {user ? <div className="navbar-end mr-4 md:w-[100px]">
                 <div className="dropdown dropdown-end rounded-field border-2 border-cyan-400 rounded-full">
                     <div title={user ? user.displayName : 'Profile'} tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
@@ -58,17 +58,17 @@ const Navbar = () => {
                         <li>
                             {
                                 user ?
-                                    isAdmin ? <Link className="hover:bg-cyan-700 text-[16px]" to='/dashboard/manageMenuItem'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link> : <Link className="hover:bg-cyan-700" to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link>
+                                    isAdmin ? <Link className="hover:bg-cyan-700 text-[14px]" to='/dashboard/manageMenuItem'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link> : <Link className="hover:bg-cyan-700 text-[14px]" to='/dashboard/userCart'><span className="flex items-center gap-[7px]"><MdDashboardCustomize></MdDashboardCustomize>Dashboard</span></Link>
                                     :
                                     ''
                             }
                         </li>
                         {
-                            user ? <li onClick={() => logOut()}><a className="hover:bg-cyan-700 text-[16px]"><BiLogOutCircle></BiLogOutCircle> Logout</a></li> : ''
+                            user ? <li onClick={() => logOut()}><a className="hover:bg-cyan-700 text-[14px]"><BiLogOutCircle></BiLogOutCircle> Logout</a></li> : ''
                         }
                     </ul>
                 </div>
-            </div>
+            </div> : <div className="navbar-end mr-4 md:w-[100px]"><li className="text-[18px] list-none px-3.5 py-1 rounded-2xl md:hover:bg-cyan-600 hover:text-white border border-cyan-600 md:font-bold bg-cyan-600"><NavLink to="/signIn" >Sign In</NavLink></li></div>}
         </div >
     );
 };

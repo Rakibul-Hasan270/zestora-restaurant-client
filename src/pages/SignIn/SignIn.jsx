@@ -50,12 +50,12 @@ const SignIn = () => {
         <section className="mt-12 mb-10">
             <div className="container flex flex-col items-center justify-center md:h-[600px] px-2 mx-auto md:max-w-2xl bg-white dark:bg-gray-900 rounded-2xl">
                 <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
-                    <h1 className="mt-3 text-2xl text-center font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">
-                        Sign In
+                    <h1 className="my-10 text-2xl text-center font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">
+                       Please Sign In
                     </h1>
 
                     {/* Email Input */}
-                    <div className="relative flex items-center mt-8">
+                    <div className="relative flex items-center">
                         <span className="absolute">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

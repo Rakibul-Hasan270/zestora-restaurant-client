@@ -72,10 +72,10 @@ const SignUp = () => {
         <section className="mt-12 mb-10">
             <div className="container flex flex-col items-center justify-center px-6 mx-auto  md:h-[700px] md:max-w-2xl bg-white dark:bg-gray-900 rounded-2xl">
                 <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
-                    <p className="text-2xl font-semibold text-center">Please sign up now</p>
+                    <p className="text-2xl font-semibold text-center my-10">Please sign up now</p>
 
                     {/* name fild  */}
-                    <div className="relative flex items-center mt-8">
+                    <div className="relative flex items-center">
                         <span className="absolute">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

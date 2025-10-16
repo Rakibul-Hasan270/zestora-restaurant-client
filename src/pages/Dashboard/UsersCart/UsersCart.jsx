@@ -45,11 +45,14 @@ const UsersCart = () => {
     return (
         <div>
             <SectionHeading heading='Your cart' subHeading='Easily edit or remove items before placing your order.'></SectionHeading>
-            <div className="flex justify-around mb-10">
-                <p className="text-3xl font-semibold text-cyan-500 text-center">Total order: {cart.length}</p>
-                <p className="text-3xl font-semibold text-cyan-500 flex justify-center items-center">Total price: {totalPrice}</p>
-                <button disabled className="btn bg-cyan-800 hover:bg-cyan-500">Pay Now</button>
+            <div className="md:flex items-center justify-around">
+                <p className="text-xl text-center md:text-3xl text-cyan-500 font-semibold">Total order: {cart.length}</p>
+                <p className="text-xl text-center md:text-3xl text-cyan-500 font-semibold">Total price: {totalPrice}</p>
+                <div className="text-end">
+                    <button disabled className="btn bg-cyan-800 hover:bg-cyan-500 btn-xs">Pay Now</button>
+                </div>
             </div>
+
             <div>
                 <div className="overflow-x-auto">
                     <table className="table">

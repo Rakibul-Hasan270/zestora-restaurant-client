@@ -45,7 +45,7 @@ const AddNewDesh = () => {
 
 
     return (
-        <div>
+        <div className="p-2">
             <SectionHeading heading='Create a menu item' subHeading='Bring your delicious creation online with image, price, and rating'></SectionHeading>
             <form onSubmit={handleSubmit(onSubmit)} className="mx-auto">
                 {/* name fild  */}

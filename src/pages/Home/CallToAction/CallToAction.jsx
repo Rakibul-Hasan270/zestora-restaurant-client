@@ -46,21 +46,21 @@ const CallToAction = () => {
     }
 
     return (
-        <div className="md:mt-28">
+        <div className="max-w-6xl mx-auto my-16 md:my-24">
             <SectionHeading heading='Reserve Your Table Today' subHeading='Avoid the wait — book your table now and enjoy a seamless dining experience with your friends and family.' />
 
-            <section>
-                <div className="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
+            <section className="w-full">
+                <div className="container flex flex-col items-center mx-auto xl:flex-row">
                     <div className="flex justify-center xl:w-1/2">
                         <img
-                            className="h-80 w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full"
+                            className="h-full w-full sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full"
                             src={ctaBg}
-                            alt=""
+                            alt="ctaBG"
                         />
                     </div>
 
                     <div className="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0">
-                        <form onSubmit={handleSubmit(onSubmit)} className="mx-auto w-full">
+                        <form onSubmit={handleSubmit(onSubmit)} className="w-full sm:w-[600px] mx-auto px-3 sm:px-0">
 
                             {/* for name  */}
                             <div className="relative z-0 w-full mb-5 group">

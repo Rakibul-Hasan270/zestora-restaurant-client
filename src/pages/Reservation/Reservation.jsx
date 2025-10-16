@@ -5,9 +5,8 @@ import CallToAction from "../Home/CallToAction/CallToAction";
 const Reservation = () => {
 
     return (
-        <div className="md:space-y-28">
+        <div>
             <Cover img={img} title='Reserve Your Table' description="Reserve your table for a smooth, stress-free dining experience."></Cover>
-
             <CallToAction></CallToAction>
         </div>
     );

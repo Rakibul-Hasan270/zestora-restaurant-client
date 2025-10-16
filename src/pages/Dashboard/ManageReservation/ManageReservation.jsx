@@ -70,7 +70,7 @@ const ManageReservation = () => {
 
     if (isLoading) return <p className="text-center text-2xl font-serif text-cyan-500 mt-16 mb-10">Loading...</p>
     return (
-        <div>
+        <div className="p-2">
             <SectionHeading heading='Reservation' subHeading='Review pending requests and keep bookings organized'></SectionHeading>
             <div className="mb-10">
                 <p className="text-xl md:text-3xl font-semibold text-cyan-500 text-center">All Reservation: {reservation.length}</p>

@@ -42,9 +42,9 @@ const ManageMenuItem = () => {
 
     if (isLoading) return <p className="text-center text-2xl font-serif text-cyan-500 mt-16 mb-10">Loading...</p>
     return (
-        <div>
+        <div className="">
             <SectionHeading heading='Edit Menu Item' subHeading='Edit Menu Item lets you quickly update dish details like name, category, description, image, price, and rating. This feature ensures menu information stays accurate and up to date, helping staff manage changes easily and customers always see the latest offerings.'></SectionHeading>
-            <div className="mb-10">
+            <div className="mb-4 md:mb-10">
                 <p className="text-xl md:text-3xl font-semibold text-cyan-500 text-center">Total Menu Item: {menuItem.length}</p>
             </div>
             <div className="overflow-x-auto">

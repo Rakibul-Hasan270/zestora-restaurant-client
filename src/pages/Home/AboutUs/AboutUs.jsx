@@ -1,85 +1,117 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import img from '../../../assets/Welcome.json'
+import img from "../../../assets/Welcome.json";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
-
 
 const AboutUs = () => {
     return (
-        <div className="md:max-w-[1400px] bg-base-100 md:mb-28 mt-28 md:mt-28 md:mx-auto">
-            <SectionHeading heading='About Us' subHeading='Get to know Us'></SectionHeading>
+        <div className="md:max-w-6xl bg-base-100 md:mx-auto my-16 md:my-24">
+            <SectionHeading heading="About Us" subHeading="Get to know Us" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 md:p-5 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 md:p-5 items-stretch">
+                {/* Left Section */}
+                <div className="bg-base-100 shadow-lg rounded-lg p-2 md:p-5 flex flex-col justify-between h-full">
+                    <p className="italic text-xl md:text-3xl font-bold text-center mb-6">
+                        Who Are We?
+                    </p>
 
-                <div className="bg-base-100 shadow-lg rounded-lg md:p-6 h-full flex flex-col justify-between"
-                >
-                    <p className='italic text-xl md:text-3xl font-bold text-center mb-6'>Who Are We?</p>
-                    <div className="join join-vertical">
+                    <div className="join join-vertical flex-1">
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="who" defaultChecked />
                             <div className="collapse-title font-semibold">Our Story</div>
                             <div className="collapse-content text-sm">
-                                Our Story is a journey of passion, culture, and flavor — bringing people together through authentic recipes and heartfelt hospitality.
+                                Our Story is a journey of passion, culture, and flavor —
+                                bringing people together through authentic recipes and
+                                heartfelt hospitality.
                             </div>
                         </div>
+
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="who" />
                             <div className="collapse-title font-semibold">Get to Know Us</div>
                             <div className="collapse-content text-sm">
-                                Get to Know Us — a team driven by flavor, tradition, and care, creating memorable dining experiences with every plate we serve.
+                                Get to Know Us — a team driven by flavor, tradition, and care,
+                                creating memorable dining experiences with every plate we serve.
                             </div>
                         </div>
+
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="who" />
                             <div className="collapse-title font-semibold">Behind Zestora</div>
                             <div className="collapse-content text-sm">
-                                Behind zestora lies a passion for blending tradition with creativity, serving food that tells a story with every delicious bite.
+                                Behind zestora lies a passion for blending tradition with
+                                creativity, serving food that tells a story with every delicious
+                                bite.
                             </div>
                         </div>
                     </div>
-                    <div className='text-center my-4 md:my-6'>
-                        <Link to='/contact'>
-                            <button className='btn btn-info'>Contact</button>
+
+                    <div className="text-center mt-6">
+                        <Link to="/contact">
+                            <button className="btn btn-info w-full md:w-auto">Contact</button>
                         </Link>
                     </div>
                 </div>
 
-                <div className="hidden lg:flex items-center justify-centerF w-[400px]">
-                    <Lottie className='' animationData={img} loop={true} />
+                {/* Middle Section */}
+                <div className="hidden lg:flex items-center justify-center h-full">
+                    <Lottie
+                        className="max-w-[350px] w-full h-full"
+                        animationData={img}
+                        loop={true}
+                    />
                 </div>
 
-                <div className="bg-base-100 shadow-lg rounded-lg h-full flex flex-col justify-between">
-                    <p className='italic text-xl md:text-3xl font-bold text-center mb-6'>What's Special?</p>
-                    <div className="join join-vertical">
+                {/* Right Section */}
+                <div className="bg-base-100 shadow-lg rounded-lg p-2 md:p-5 flex flex-col justify-between h-full">
+                    <p className="italic text-xl md:text-3xl font-bold text-center mb-6">
+                        What's Special?
+                    </p>
+
+                    <div className="join join-vertical flex-1">
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="special" defaultChecked />
-                            <div className="collapse-title font-semibold">Fresh, locally-sourced ingredients</div>
+                            <div className="collapse-title font-semibold">
+                                Fresh, locally-sourced ingredients
+                            </div>
                             <div className="collapse-content text-sm">
-                                We serve fresh, locally-sourced ingredients — supporting local farms while delivering natural flavor and seasonal goodness in every bite.
+                                We serve fresh, locally-sourced ingredients — supporting local
+                                farms while delivering natural flavor and seasonal goodness in
+                                every bite.
                             </div>
                         </div>
+
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="special" />
-                            <div className="collapse-title font-semibold">Fusion & Traditional Recipes</div>
+                            <div className="collapse-title font-semibold">
+                                Fusion & Traditional Recipes
+                            </div>
                             <div className="collapse-content text-sm">
-                                We combine traditional recipes with modern fusion techniques to offer a dining experience that’s both unique and authentic.
+                                We combine traditional recipes with modern fusion techniques to
+                                offer a dining experience that’s both unique and authentic.
                             </div>
                         </div>
+
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="special" />
-                            <div className="collapse-title font-semibold">100% Halal-certified Meals</div>
+                            <div className="collapse-title font-semibold">
+                                100% Halal-certified Meals
+                            </div>
                             <div className="collapse-content text-sm">
-                                We proudly serve 100% Halal-certified meals, ensuring quality and flavor that meets the highest dietary standards.
+                                We proudly serve 100% Halal-certified meals, ensuring quality
+                                and flavor that meets the highest dietary standards.
                             </div>
                         </div>
                     </div>
-                    <div className='text-center mt-4'>
-                        <Link to='/reservation'>
-                            <button className='btn btn-info'>Reservation</button>
+
+                    <div className="text-center mt-6">
+                        <Link to="/reservation">
+                            <button className="btn btn-info w-full md:w-auto">
+                                Reservation
+                            </button>
                         </Link>
                     </div>
                 </div>
-
             </div>
         </div>
     );

@@ -162,7 +162,7 @@ const Dashboard = () => {
                 <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                 <div className="w-72 bg-cyan-900 text-white min-h-screen">
                     <div className="text-center text-2xl font-bold py-6 text-cyan-300">
-                        <Link to='/'>Dashboard</Link>
+                        <Link to='/'>Zestora Restaurant <br /> Dashboard</Link>
                     </div>
                     {links}
                 </div>
